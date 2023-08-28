@@ -72,39 +72,27 @@ class Pet(db.Model, SerializerMixin):
     __tablename__ = "pets"
     
     id = db.Column(db.Integer, primary_key=True)
+    animal_type = db.Column(db.String)
     name = db.Column(db.String(15), nullable=False)
-    age = db.Column(db.Float, nullable=False)
+    age = db.Column(db.String, nullable=False)
     breed = db.Column(db.String, nullable=False)
-    temperament = db.Column(db.String, nullable=False)
-    good_wt_pets = db.Column(db.Boolean, nullable=False)
     sex = db.Column(db.String , nullable=False)
     size = db.Column(db.String)
+    temperament = db.Column(db.String, nullable=False)
     good_wt_kids = db.Column(db.Boolean , nullable=False)
+    good_wt_pets = db.Column(db.Boolean, nullable=False) 
     image = db.Column(db.String , nullable=False)
     adoption_link = db.Column(db.String , nullable=False)
     
     schedules = db.relationship("Schedule", backref="pet")
     
-    serialize_rules = ("-schedule")
-    
-    
-    def display_age(self):
-        if self.age < 1:
-            age_months = int(self.age * 12)
-            return f"{age_months} months"
-        else:
-            return f"{self.age} years"
-    
-    
-    @validates("age")
-    def validate_age(self, key, value):
-        if not (0 <= value <= 25):
-            raise ValueError("Age must be between 0.1 and 25, inclusive.")
-        return value
+    serialize_rules = ("-schedules")
+      
+   
     
     @validates("sex")
     def validate_sex(self, key, value):
-        if value not in ["Female", "Male"]:
+        if value not in ["female", "male"]:
             raise ValueError("Must choose female or male.")
         return value
     
@@ -140,3 +128,5 @@ class Schedule(db.Model, SerializerMixin):
     
     def __repr__(self):
         return f'Schedule (user_id={self.user_id}, pet_id={self.pet_id}, Time and Date={self.date_time})'
+    
+    
