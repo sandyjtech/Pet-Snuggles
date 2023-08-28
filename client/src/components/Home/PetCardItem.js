@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
 const EmptyHeart= () => {
   const [isFilled, setIsFilled] = useState(false);
@@ -7,9 +8,10 @@ const EmptyHeart= () => {
   const handleClick = () => {
     setIsFilled(!isFilled);
   };
+
   return (
       <a onClick={handleClick}>
-        {isFilled ? <AiFillHeart color="red"/> : <AiOutlineHeart color="red"/>}
+        {isFilled ? <FavoriteIcon style={{ color: 'red' }}/> : <FavoriteBorderOutlinedIcon style={{ color: 'red' }}/>}
       </a>
   );
 }
@@ -17,6 +19,7 @@ const EmptyHeart= () => {
 const PetCardItem = () => {
   return (
     <div>
+      
       <EmptyHeart align='right'/>
     </div>
   )

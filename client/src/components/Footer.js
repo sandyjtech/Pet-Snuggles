@@ -1,11 +1,14 @@
 import * as React from 'react';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import { AiFillHeart, BiSearchAlt, AiOutlineCalendar } from 'react-icons/ai';
-import { MdPersonOutline } from 'react-icons/md'
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
+import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import { styled } from '@mui/material/styles';
 import MuiGrid from '@mui/material/Grid';
 import Divider from '@mui/material/Divider';
+import SearchIcon from '@mui/icons-material/Search';
+import { Link } from 'react-router-dom'
 
 const Grid = styled(MuiGrid)(({ theme }) => ({
   width: '100%',
@@ -19,37 +22,37 @@ function Footer() {
 
   return (
     <Grid container>
-    <Stack direction="row" spacing={2}>
-      <Grid item xs>
-
-        <Button><BiSearchAlt /></Button>
-      </Grid>
-        <Divider orientation="vertical" flexItem>
-        VERTICAL
+    <Stack direction="row" spacing={5}>
+    <Divider orientation="vertical" flexItem>
       </Divider>
       <Grid item xs>
-        <Button>
-          <AiFillHeart color="red"/> 
+        <Link to="/"><Button><SearchIcon style={{ color: 'black' }}/></Button></Link>
+      </Grid>
+        <Divider orientation="vertical" flexItem>
+      </Divider>
+      <Grid item xs>
+        <Link to="/favorites"><Button>
+          <FavoriteIcon style={{ color: 'red' }}/> 
         </Button>
+        </Link>
       </Grid>
       <Divider orientation="vertical" flexItem>
-        VERTICAL
       </Divider>
       <Grid item xs>
-        <Button>
-          <AiOutlineCalendar color="blue"/>
+        <Link to="/schedule"><Button>
+          <CalendarTodayOutlinedIcon style={{ color: 'blue' }}/>
         </Button>
+        </Link>
       </Grid>
         <Divider orientation="vertical" flexItem>
-        VERTICAL
       </Divider>
       <Grid item xs>
-      <Button>
-      <MdPersonOutline />
+      <Link to="/profile"><Button>
+      <PersonOutlinedIcon style={{ color: 'black' }}/>
       </Button>
+      </Link>
       </Grid>
       <Divider orientation="vertical" flexItem>
-        VERTICAL
       </Divider>
       </Stack>
     </Grid>

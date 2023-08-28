@@ -1,10 +1,14 @@
 import React from 'react'
+import PetCardItem from './PetCardItem'
 
-const PetCards = () => {
-  return (
-    <div>
-      
-    </div>
+const PetCards = ({ pets }) => {
+  const petCards = pets.map((pet) => {
+    return <PetCardItem key={pet.id} {...pet}/>
+  })
+    return (
+      <div>
+        {petCards}
+      </div>
   )
 }
 
