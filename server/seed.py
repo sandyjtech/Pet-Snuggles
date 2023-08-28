@@ -3,13 +3,19 @@
 
 # Standard library imports
 from faker import Faker
-import bcrypt
+import json
 
 # Local imports
 from app import app, db
 from models import User, Pet
 
 fake = Faker()
+
+with open('db.json', 'r') as json_file:
+    data = json.load(json_file)
+
+dogs = data.get('dogs', [])
+cats = data.get('cats', [])
 
 def seed_users(num_users):
     for _ in range(num_users):
@@ -24,21 +30,23 @@ def seed_users(num_users):
         db.session.add(user)
     db.session.commit()
 
-def seed_pets(num_pets):
-    for _ in range(num_pets):
-        pet = Pet(
-            name=fake.first_name(),
-            age=fake.random_int(min=1, max=15),
-            breed=fake.random_element(elements=("Dog", "Cat", "Rabbit")),
-            temperament=fake.random_element(elements=("Friendly", "Calm", "Energetic")),
-            good_wt_pets=fake.boolean(),
-            sex=fake.random_element(elements=("Male", "Female")),
-            size=fake.random_element(elements=("small", "medium", "large", "x-large")),  # Use lowercase values
-            good_wt_kids=fake.boolean(),
-            image=fake.image_url(),
-            adoption_link=fake.url()
-        )
-        db.session.add(pet)
+def seed_pets(pet_data):
+    for animal_type, pet_info_list in pet_data.items():
+        for pet_info in pet_info_list:
+            pet = Pet(
+                animal_type=animal_type,
+                name=pet_info['name'],
+                age=pet_info['age'],
+                breed=pet_info['breed'],
+                sex=pet_info['sex'],
+                size=pet_info['size'],
+                temperament=pet_info['temperament'],
+                good_wt_pets=pet_info['good_wt_pets'],
+                good_wt_kids=pet_info['good_wt_kids'],
+                image=pet_info['image'],
+                adoption_link=pet_info['adoption_link']
+            )
+            db.session.add(pet)
     db.session.commit()
 
 if __name__ == "__main__":
@@ -52,10 +60,9 @@ if __name__ == "__main__":
 
         # Seed users
         num_users = 5
-        seed_users(num_users)
+        ##seed_users(num_users)
 
         # Seed pets
-        num_pets = 5
-        seed_pets(num_pets)
+        ##seed_pets({'dog': dogs, 'cat': cats})
 
         print("Seed complete!")
