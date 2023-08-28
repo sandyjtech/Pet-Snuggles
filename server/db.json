@@ -1,0 +1,958 @@
+{
+    "dogs": [
+        {
+          "name": "Slick",
+          "age": "puppy - 8 weeks",
+          "breed": "Boston Terrier",
+          "male or female": "male",
+          "size": "small",
+          "temperament": "cuddly",
+          "good w": {
+             "kids?": false,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66238728/1/?bust=1692146896&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/dog/slick-66238728/or/portland/saving-hope-animal-rescue-fund-tx2337/#story"
+       },
+        {
+          "name": "Nick",
+          "age": "puppy - 8 weeks",
+          "breed": "Boston Terrier",
+          "male or female": "male",
+          "size": "small",
+          "temperament": "sweet",
+          "good w": {
+             "kids?": false,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66238772/2/?bust=1692147224&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/dog/nick-66238772/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Patch",
+          "age": "adult - 1 year",
+          "breed": "Mixed",
+          "male or female": "female",
+          "size": "medium",
+          "temperament": "gentle",
+          "good w": {
+             "kids?": false,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66238806/3/?bust=1692147476&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/dog/patchrice-66238806/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Schmidt",
+          "age": "puppy - 8 weeks",
+          "breed": "Boston Terrier",
+          "male or female": "male",
+          "size": "small",
+          "temperament": "playful",
+          "good w": {
+             "kids?": true,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66238865/2/?bust=1692147862&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/dog/schmidt-66238865/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Jettson",
+          "age": "puppy",
+          "breed": "Mixed",
+          "male or female": "male",
+          "size": "small",
+          "temperament": "happy",
+          "good w": {
+             "kids?": false,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66238990/1/?bust=1692148540&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/dog/jettson-66238990/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Sina",
+          "age": "puppy - 7 weeks",
+          "breed": "Pit Bull Terrier",
+          "male or female": "female",
+          "size": "small",
+          "temperament": "loyal",
+          "good w": {
+             "kids?": false,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66239124/3/?bust=1692148941&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/dog/sina-66239124/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Tahoe",
+          "age": "puppy - 2 months",
+          "breed": "Mixed",
+          "male or female": "male",
+          "size": "large",
+          "temperament": "cuddly",
+          "good w": {
+             "kids?": false,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66270166/3/?bust=1692329597&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/dog/tahoe-66270166/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Jess",
+          "age": "puppy - 8 weeks",
+          "breed": "Boston Terrier",
+          "male or female": "female",
+          "size": "small",
+          "temperament": "shy",
+          "good w": {
+             "kids?": false,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66270310/2/?bust=1692330547&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/dog/jess-66270310/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Mora",
+          "age": "puppy",
+          "breed": "Mixed",
+          "male or female": "female",
+          "size": "small",
+          "temperament": "sassy",
+          "good w": {
+             "kids?": true,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66270204/2/?bust=1692329917&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/dog/mora-66270204/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Te Fiti",
+          "age": "puppy",
+          "breed": "Mixed",
+          "male or female": "female",
+          "size": "small",
+          "temperament": "curious",
+          "good w": {
+             "kids?": true,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66270225/2/?bust=1692330098&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/dog/te-fiti-66270225/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Ocean",
+          "age": "puppy - 8 weeks",
+          "breed": "Mixed",
+          "male or female": "female",
+          "size": "small",
+          "temperament": "sweet",
+          "good w": {
+             "kids?": false,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66270323/1/?bust=1692330812&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/dog/ocean-66270323/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Maverick",
+          "age": "young - 2 years",
+          "breed": "Australian Shepard",
+          "male or female": "male",
+          "size": "large",
+          "temperament": "playful",
+          "good w": {
+             "kids?": false,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66318742/3/?bust=1692628476&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/dog/maverick-66318742/or/portland/australian-shepherds-furever-ca2261/"
+       },
+        {
+          "name": "Daxton",
+          "age": "puppy - 4 months",
+          "breed": "German Shepherd",
+          "male or female": "male",
+          "size": "medium",
+          "temperament": "affectionate",
+          "good w": {
+             "kids?": true,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66285078/1/?bust=1692417947&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/dog/daxton-66285078/or/portland/south-texas-animal-rescue-group-aka-star-group-rescue-tx2708/"
+       },
+        {
+          "name": "Grant",
+          "age": "puppy",
+          "breed": "Shepard Mix",
+          "male or female": "male",
+          "size": "large",
+          "temperament": "friendly",
+          "good w": {
+             "kids?": true,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66314957/2/?bust=1692618570&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/dog/grant-66314957/or/portland/south-texas-animal-rescue-group-aka-star-group-rescue-tx2708/"
+       },
+        {
+          "name": "Uno",
+          "age": "puppy",
+          "breed": "Labrador Retriever & Anatolian Shepard",
+          "male or female": "female",
+          "size": "large",
+          "temperament": "affectionate",
+          "good w": {
+             "kids?": false,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66320130/1/?bust=1692646958&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/dog/uno-66320130/or/portland/south-texas-animal-rescue-group-aka-star-group-rescue-tx2708/"
+       },
+        {
+          "name": "Rockstar",
+          "age": "puppy",
+          "breed": "Labrador Retriever & Anatolian Shepard",
+          "male or female": "male",
+          "size": "large",
+          "temperament": "playful",
+          "good w": {
+             "kids?": false,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66322017/3/?bust=1692670977&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/dog/rockstar-66322017/or/portland/south-texas-animal-rescue-group-aka-star-group-rescue-tx2708/"
+       },
+        {
+          "name": "Cooper",
+          "age": "adult",
+          "breed": "Pit Bull Terrier",
+          "male or female": "male",
+          "size": "large",
+          "temperament": "friendly",
+          "good w": {
+             "kids?": true,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66547793/3/?bust=1692741754&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/dog/copper-66547793/or/portland/corridor-rescue-inc-tx1448/"
+       },
+        {
+          "name": "Flurry",
+          "age": "young",
+          "breed": "American Staffordshire Terrier",
+          "male or female": "male",
+          "size": "medium",
+          "temperament": "gentle",
+          "good w": {
+             "kids?": true,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/54990596/2/?bust=1653799774&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/dog/flurry-54990596/or/portland/brave-bully-rescue-tx1931/"
+       },
+        {
+          "name": "Carrot",
+          "age": "puppy - 8 weeks",
+          "breed": "Siberian Huskey",
+          "male or female": "female",
+          "size": "large",
+          "temperament": "affectionate",
+          "good w": {
+             "kids?": true,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65822815/1/?bust=1691639337&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/dog/carrot-65822815/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Griffin",
+          "age": "puppy - 6 months",
+          "breed": "Mixed",
+          "male or female": "male",
+          "size": "medium",
+          "temperament": "playful",
+          "good w": {
+             "kids?": false,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65822859/2/?bust=1691640079&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/dog/griffin-65822859/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Parsnip",
+          "age": "puppy - 8 weeks",
+          "breed": "Siberian Huskey",
+          "male or female": "female",
+          "size": "large",
+          "temperament": "goofy",
+          "good w": {
+             "kids?": true,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65822863/3/?bust=1691640221&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/dog/parsnip-65822863/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Moose",
+          "age": "adult",
+          "breed": "American Staffordshire Terrier",
+          "male or female": "male",
+          "size": "large",
+          "temperament": "friendly",
+          "good w": {
+             "kids?": true,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66138811/6/?bust=1691854184&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/dog/moose-66138811/or/portland/angels-2-the-rescue-tx2430/"
+       },
+        {
+          "name": "Hershey",
+          "age": "young",
+          "breed": "American Staffordshire Terrier",
+          "male or female": "female",
+          "size": "large",
+          "temperament": "affectionate",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66138888/4/?bust=1691854846&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/dog/hershey-66138888/or/portland/angels-2-the-rescue-tx2430/"
+       },
+        {
+          "name": "Finn",
+          "age": "young",
+          "breed": "American Staffordshire Terrier",
+          "male or female": "male",
+          "size": "medium",
+          "temperament": "playful",
+          "good w": {
+             "kids?": true,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66139328/1/?bust=1691857582&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/dog/finn-66139328/or/portland/angels-2-the-rescue-tx2430/"
+       },
+        {
+          "name": "Oleander",
+          "age": "puppy",
+          "breed": "Beagle",
+          "male or female": "male",
+          "size": "medium",
+          "temperament": "playful",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65483817/1/?bust=1689643378&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/dog/oleander-65483817/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Candy",
+          "age": "adult",
+          "breed": "Boxer",
+          "male or female": "female",
+          "size": "large",
+          "temperament": "sweet",
+          "good w": {
+             "kids?": true,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65571352/1/?bust=1690162636&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/dog/candy-65571352/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Viserys",
+          "age": "adult",
+          "breed": "Great Pyrenees",
+          "male or female": "female",
+          "size": "large",
+          "temperament": "smart",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65570775/1/?bust=1690158953&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/dog/viserys-65570775/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Lexi",
+          "age": "adult",
+          "breed": "German Shepherd",
+          "male or female": "female",
+          "size": "large",
+          "temperament": "playful",
+          "good w": {
+             "kids?": true,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65575405/6/?bust=1690214446&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/dog/lexi-65575405/or/portland/angels-2-the-rescue-tx2430/"
+       },
+        {
+          "name": "Hector",
+          "age": "young",
+          "breed": "Retriever",
+          "male or female": "male",
+          "size": "medium",
+          "temperament": "sweet",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65659988/1/?bust=1692742411&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/dog/hector-65659988/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Alaric",
+          "age": "adult",
+          "breed": "Pointer & Labrador Retriever",
+          "male or female": "male",
+          "size": "medium",
+          "temperament": "friendly",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65688891/3/?bust=1690809981&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/dog/alaric-65688891/or/portland/corridor-rescue-inc-tx1448/"
+       },
+        {
+          "name": "Levi",
+          "age": "adult",
+          "breed": "Husky & German Shepard",
+          "male or female": "male",
+          "size": "large",
+          "temperament": "sweet",
+          "good w": {
+             "kids?": true,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65677953/1/?bust=1690720024&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/dog/levi-65677953/or/portland/paw-pals-of-hale-center-tx2156/"
+       },
+        {
+          "name": "Beau",
+          "age": "puppy",
+          "breed": "Pit Bull Terrier",
+          "male or female": "male",
+          "size": "small",
+          "temperament": "energetic",
+          "good w": {
+             "kids?": true,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65714494/1/?bust=1692649989&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/dog/beau-65714494/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Hutch",
+          "age": "puppy",
+          "breed": "Pit Bull Terrier",
+          "male or female": "male",
+          "size": "small",
+          "temperament": "snuggly",
+          "good w": {
+             "kids?": true,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65714855/1/?bust=1690942551&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/dog/hutch-65714855/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Daenerys",
+          "age": "adult",
+          "breed": "Mixed",
+          "male or female": "female",
+          "size": "large",
+          "temperament": "sweet",
+          "good w": {
+             "kids?": true,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65807930/1/?bust=1692046493&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/dog/daenerys-65807930/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       }
+       ],
+"cats": [
+        {
+          "name": "Franz",
+          "age": "kitten",
+          "breed": "Tabby",
+          "male or female": "male",
+          "size": "small",
+          "temperament": "affectionate",
+          "good w": {
+             "kids?": true,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65913409/3/?bust=1691966872&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/cat/franz-65913409/or/portland/lone-star-pawz-tx2673/"
+       },
+        {
+          "name": "Bolt",
+          "age": "kitten",
+          "breed": "Tuxedo",
+          "male or female": "male",
+          "size": "small",
+          "temperament": "friendly",
+          "good w": {
+             "kids?": true,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66233369/2/?bust=1692136234&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/cat/bolt-66233369/or/portland/lone-star-pawz-tx2673/"
+       },
+        {
+          "name": "Ajax",
+          "age": "kitten",
+          "breed": "Tuxedo",
+          "male or female": "male",
+          "size": "small",
+          "temperament": "playful",
+          "good w": {
+             "kids?": true,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66233403/2/?bust=1692136421&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/cat/ajax-66233403/or/portland/lone-star-pawz-tx2673/"
+       },
+        {
+          "name": "Ember",
+          "age": "kitten",
+          "breed": "Calico",
+          "male or female": "female",
+          "size": "small",
+          "temperament": "affectionate",
+          "good w": {
+             "kids?": true,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66546705/1/?bust=1692730984&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/cat/ember-66546705/or/portland/lone-star-pawz-tx2673/"
+       },
+        {
+          "name": "Nico",
+          "age": "kitten",
+          "breed": "Tabby",
+          "male or female": "male",
+          "size": "small",
+          "temperament": "playful",
+          "good w": {
+             "kids?": true,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66547108/5/?bust=1692735576&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/cat/nico-66547108/or/portland/lone-star-pawz-tx2673/"
+       },
+        {
+          "name": "Zane",
+          "age": "kitten",
+          "breed": "Tabby",
+          "male or female": "male",
+          "size": "medium",
+          "temperament": "curious",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65620561/2/?bust=1690405333&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/cat/zane-65620561/or/portland/apollo-support-rescue-tx1660/"
+       },
+        {
+          "name": "Stevie",
+          "age": "senior",
+          "breed": "Domestic Short Hair",
+          "male or female": "male",
+          "size": "medium",
+          "temperament": "friendly",
+          "good w": {
+             "kids?": false,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65781256/1/?bust=1691385321&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/cat/stevia-65781256/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Giovanni",
+          "age": "kitten",
+          "breed": "Domestic Short Hair",
+          "male or female": "male",
+          "size": "small",
+          "temperament": "independent",
+          "good w": {
+             "kids?": false,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65689128/1/?bust=1690813736&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/cat/giovanni-65689128/or/portland/corridor-rescue-inc-tx1448/"
+       },
+        {
+          "name": "Bear",
+          "age": "adult",
+          "breed": "Tuxedo",
+          "male or female": "male",
+          "size": "medium",
+          "temperament": "loyal",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65790537/1/?bust=1691452539&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/cat/bear-65790537/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Maddie",
+          "age": "kitten",
+          "breed": "Domestic Short Hair",
+          "male or female": "female",
+          "size": "small",
+          "temperament": "cuddly",
+          "good w": {
+             "kids?": false,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65844522/1/?bust=1691726296&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/cat/maddie-klein-65844522/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Dot",
+          "age": "kitten",
+          "breed": "Domestic Short Hair",
+          "male or female": "female",
+          "size": "small",
+          "temperament": "friendly",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66608056/1/?bust=1692846620&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/cat/dot-66608056/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Abby",
+          "age": "Adult",
+          "breed": "American Shorthair",
+          "male or female": "female",
+          "size": "large",
+          "temperament": "sweet",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65906918/1/?bust=1691814560&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/cat/abby-65906918/or/portland/saving-hope-animal-rescue-fund-tx2337/"
+       },
+        {
+          "name": "Olivia",
+          "age": "Adult",
+          "breed": "Snowshoe",
+          "male or female": "female",
+          "size": "medium",
+          "temperament": "playful",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/55776018/2/?bust=1692768066&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/cat/olivia-55776018/or/portland/house-of-dreams-or88/"
+       },
+        {
+          "name": "Moochie",
+          "age": "senior",
+          "breed": "Domestic Short Hair",
+          "male or female": "female",
+          "size": "small",
+          "temperament": "sweet",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60049987/1/?bust=1692768132&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/cat/moochie-60049987/or/portland/house-of-dreams-or88/"
+       },
+        {
+          "name": "Fatima",
+          "age": "senior",
+          "breed": "Domestic Short Hair",
+          "male or female": "female",
+          "size": "medium",
+          "temperament": "affectionate",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65515533/4/?bust=1689805703&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/cat/fatima-65515533/or/portland/the-pixie-project-or207/"
+       },
+        {
+          "name": "Haru",
+          "age": "young",
+          "breed": "Domestic Short Hair",
+          "male or female": "female",
+          "size": "medium",
+          "temperament": "affectionate",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65530860/2/?bust=1689892333&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/cat/haru-65530860/or/portland/the-pixie-project-or207/"
+       },
+        {
+          "name": "Chimichurri",
+          "age": "Adult",
+          "breed": "Domestic Short Hair",
+          "male or female": "male",
+          "size": "medium",
+          "temperament": "loyal",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65621052/1/?bust=1690407049&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/cat/chimichurri-65621052/or/portland/the-pixie-project-or207/"
+       },
+        {
+          "name": "Flint",
+          "age": "Adult",
+          "breed": "Domestic Short Hair",
+          "male or female": "male",
+          "size": "medium",
+          "temperament": "curious",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65546788/6/?bust=1689977972&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/cat/flint-65546788/or/portland/the-pixie-project-or207/"
+       },
+        {
+          "name": "Aiko",
+          "age": "Adult",
+          "breed": "Domestic Short Hair",
+          "male or female": "female",
+          "size": "medium",
+          "temperament": "sweet",
+          "good w": {
+             "kids?": true,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65757909/2/?bust=1691190377&width=560",
+          "adopt on petfinder": "https://www.petfinder.com/cat/aiko-65757909/or/portland/the-pixie-project-or207/"
+       },
+        {
+          "name": "Charisse",
+          "age": "kitten",
+          "breed": "Abyssinian",
+          "male or female": "female",
+          "size": "small",
+          "temperament": "friendly",
+          "good w": {
+             "kids?": false,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/64999548/1/?bust=1686854661&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/cat/charisse-64999548/or/portland/cat-utopia-or435/"
+       },
+        {
+          "name": "Tolstoy",
+          "age": "kitten",
+          "breed": "Domestic Short Hair",
+          "male or female": "male",
+          "size": "small",
+          "temperament": "friendly",
+          "good w": {
+             "kids?": false,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65576733/2/?bust=1690496507&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/cat/tolstoy-65576733/or/portland/cat-utopia-or435/"
+       },
+        {
+          "name": "Berry",
+          "age": "senior",
+          "breed": "Domestic Short Hair",
+          "male or female": "male",
+          "size": "medium",
+          "temperament": "sweet",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/59953832/1/?bust=1692042668&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/cat/berry-59953832/or/portland/animal-aid-inc-or96/"
+       },
+        {
+          "name": "Mister",
+          "age": "adult",
+          "breed": "Domestic Short Hair",
+          "male or female": "male",
+          "size": "medium",
+          "temperament": "snuggly",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/63399913/5/?bust=1692042663&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/cat/mister-63399913/or/portland/animal-aid-inc-or96/"
+       },
+        {
+          "name": "Godiva",
+          "age": "adult",
+          "breed": "Domestic Short Hair",
+          "male or female": "female",
+          "size": "medium",
+          "temperament": "sweet",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/64917419/1/?bust=1692042659&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/cat/godiva-64917419/or/portland/animal-aid-inc-or96/"
+       },
+        {
+          "name": "Stormy",
+          "age": "adult",
+          "breed": "Domestic Short Hair",
+          "male or female": "female",
+          "size": "small",
+          "temperament": "friendly",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65283838/1/?bust=1692042666&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/cat/stormy-65283838/or/portland/animal-aid-inc-or96/"
+       },
+        {
+          "name": "Raul",
+          "age": "young",
+          "breed": "Tabby",
+          "male or female": "male",
+          "size": "medium",
+          "temperament": "friendly",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65019226/1/?bust=1692042658&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/cat/raul-65019226/or/portland/animal-aid-inc-or96/"
+       },
+        {
+          "name": "Monty",
+          "age": "senior",
+          "breed": "Domestic Short Hair",
+          "male or female": "male",
+          "size": "medium",
+          "temperament": "sweet",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/64985435/5/?bust=1692042664&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/cat/monty-64985435/or/portland/animal-aid-inc-or96/"
+       },
+        {
+          "name": "Ruby",
+          "age": "adult",
+          "breed": "Domestic Short Hair",
+          "male or female": "female",
+          "size": "medium",
+          "temperament": "playful",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65321145/2/?bust=1692042654&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/cat/ruby-65321145/or/portland/animal-aid-inc-or96/"
+       },
+        {
+          "name": "Clyde",
+          "age": "kitten",
+          "breed": "Domestic Short Hair",
+          "male or female": "male",
+          "size": "small",
+          "temperament": "snuggly",
+          "good w": {
+             "kids?": false,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65321144/2/?bust=1692042653&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/cat/clyde-65321144/or/portland/animal-aid-inc-or96/"
+       },
+        {
+          "name": "Estella",
+          "age": "kitten",
+          "breed": "Domestic Short Hair",
+          "male or female": "female",
+          "size": "small",
+          "temperament": "playful",
+          "good w": {
+             "kids?": false,
+             "other animals?": true
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65373978/2/?bust=1692042667&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/cat/estella-65373978/or/portland/animal-aid-inc-or96/"
+       },
+        {
+          "name": "Allegra",
+          "age": "adult",
+          "breed": "Tabby",
+          "male or female": "female",
+          "size": "medium",
+          "temperament": "sweet",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65719855/1/?bust=1692042663&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/cat/allegra-65719855/or/portland/animal-aid-inc-or96/"
+       },
+        {
+          "name": "Frodo",
+          "age": "adult",
+          "breed": "Domestic Short Hair",
+          "male or female": "male",
+          "size": "medium",
+          "temperament": "cuddly",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66647823/2/?bust=1693005786&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/cat/frodo-66647823/or/portland/the-pixie-project-or207/"
+       },
+        {
+          "name": "Skye",
+          "age": "senior",
+          "breed": "Domestic Short Hair",
+          "male or female": "female",
+          "size": "medium",
+          "temperament": "cuddly",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/58201987/1/?bust=1692768105&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/cat/skye-58201987/or/portland/house-of-dreams-or88/"
+       },
+        {
+          "name": "Kiku",
+          "age": "adult",
+          "breed": "Domestic Short Hair",
+          "male or female": "female",
+          "size": "medium",
+          "temperament": "cuddly",
+          "good w": {
+             "kids?": false,
+             "other animals?": false
+          },
+          "photo": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/66275239/2/?bust=1692377466&width=1080",
+          "adopt on petfinder": "https://www.petfinder.com/cat/kiku-66275239/or/portland/animal-aid-inc-or96/"
+       }
+       ]
+    }
