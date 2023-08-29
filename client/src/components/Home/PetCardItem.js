@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import CardMedia from '@mui/material/CardMedia';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import Button from '@mui/material/Button';
+import { NavLink } from 'react-router-dom';
 
 const EmptyHeart= () => {
   const [isFilled, setIsFilled] = useState(false);
@@ -21,17 +26,20 @@ const EmptyHeart= () => {
 const PetCardItem = ({ name, image }) => {
   return (
     <div>
-     
-      <img
-        src={image}
-        alt={name}
-        height={260}
-        width={260} 
-        overflow hidden
-            />
-      <h2>{name}</h2>
-      <EmptyHeart align='right'/>
-      <Button>Book</Button>
+      <Card sx={{ maxWidth: 345 }}>
+        <CardMedia
+          sx={{ height: 345}}
+          image={image}
+          alt={name}
+        />
+      <CardContent>
+        <h2>{name}</h2>
+      </CardContent>
+      <CardActions>
+        <EmptyHeart align='right'/>
+        <NavLink to="/pet-profile"><Button>Book</Button></NavLink>
+      </CardActions>
+      </Card>
     </div>
   )
 }
