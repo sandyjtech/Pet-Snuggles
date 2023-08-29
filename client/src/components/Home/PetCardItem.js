@@ -31,6 +31,7 @@ const PetCardItem = ({ name, image }) => {
           sx={{ height: 345}}
           image={image}
           alt={name}
+          overflow hidden
         />
       <CardContent>
         <h2>{name}</h2>
