@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -8,7 +9,7 @@ import { styled } from '@mui/material/styles';
 import MuiGrid from '@mui/material/Grid';
 import Divider from '@mui/material/Divider';
 import SearchIcon from '@mui/icons-material/Search';
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const Grid = styled(MuiGrid)(({ theme }) => ({
   width: '100%',
@@ -21,41 +22,46 @@ const Grid = styled(MuiGrid)(({ theme }) => ({
 function Footer() {
 
   return (
+ 
     <Grid container>
     <Stack direction="row" spacing={5}>
     <Divider orientation="vertical" flexItem>
       </Divider>
+      
       <Grid item xs>
-        <Link to="/"><Button><SearchIcon style={{ color: 'black' }}/></Button></Link>
+        <NavLink to="/"><Button><SearchIcon style={{ color: 'black' }}/></Button></NavLink>
       </Grid>
         <Divider orientation="vertical" flexItem>
       </Divider>
       <Grid item xs>
-        <Link to="/favorites"><Button>
+        <NavLink to="/favorites"><Button>
           <FavoriteIcon style={{ color: 'red' }}/> 
         </Button>
-        </Link>
+        </NavLink>
       </Grid>
       <Divider orientation="vertical" flexItem>
       </Divider>
       <Grid item xs>
-        <Link to="/schedule"><Button>
+        <NavLink to="/schedule"><Button>
           <CalendarTodayOutlinedIcon style={{ color: 'blue' }}/>
         </Button>
-        </Link>
+        </NavLink>
       </Grid>
         <Divider orientation="vertical" flexItem>
       </Divider>
       <Grid item xs>
-      <Link to="/profile"><Button>
+      <NavLink to="/profile"><Button>
       <PersonOutlinedIcon style={{ color: 'black' }}/>
       </Button>
-      </Link>
+      </NavLink>
+      
       </Grid>
+      
       <Divider orientation="vertical" flexItem>
       </Divider>
       </Stack>
     </Grid>
+    
 
   );
 }

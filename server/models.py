@@ -18,10 +18,10 @@ class User(db.Model, SerializerMixin):
     own_pets = db.Column(db.Boolean, nullable=False)
     space = db.Column(db.String)
     
-    favorites = db.relationship("Favorite", backref="schedule")
+    favorites = db.relationship("Favorite", backref="user")
     schedules = association_proxy("favorites", "schedule")
     
-    serialize_rules = ("-favorites", "-schedules")
+    serialize_rules = ("-favorites.user", "-schedules.user",)
     
     @validates("space")
     def validate_space(self, key, value):
@@ -85,7 +85,7 @@ class Pet(db.Model, SerializerMixin):
     
     schedules = db.relationship("Schedule", backref="pet")
     
-    serialize_rules = ("-schedules")
+    serialize_rules = ("-schedules.pet",)
       
     
     @validates("sex")
@@ -109,7 +109,7 @@ class Favorite(db.Model, SerializerMixin):
     pet_id = db.Column(db.Integer, db.ForeignKey('pets.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     
-    serialize_rules = ('-favorites', '-schedules')
+    serialize_rules = ('-favorites', '-schedules',)
     
     def __repr__(self):
         return f'Favorite (id={self.id}, pet_id={self.pet_id}, user_id={self.user_id})'
@@ -122,7 +122,7 @@ class Schedule(db.Model, SerializerMixin):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))  
     date_time = db.Column(db.DateTime, nullable=False)  # Store date and time explicitly
     
-    serialize_rules = ("-favorites", "-schedules")
+    serialize_rules = ("-favorites", "-schedules",)
     
     def __repr__(self):
         return f'Schedule (user_id={self.user_id}, pet_id={self.pet_id}, Time and Date={self.date_time})'

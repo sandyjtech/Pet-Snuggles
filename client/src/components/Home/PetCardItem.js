@@ -18,17 +18,18 @@ const EmptyHeart= () => {
 }
 //turn into a button, add to user id, sent to database favorites, userid, petid
 
-const PetCardItem = ({ Photo, Name }) => {
+const PetCardItem = ({ name, image }) => {
   return (
     <div>
+     <h1>test</h1>
       <img
-        src={Photo}
-        alt={Name}
+        src={image}
+        alt={name}
         height={260}
         width={260} 
         overflow hidden
             />
-      <h2>{Name}</h2>
+      <h2>{name}</h2>
       <EmptyHeart align='right'/>
       <Button>Book</Button>
     </div>
