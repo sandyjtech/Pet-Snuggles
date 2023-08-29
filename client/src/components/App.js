@@ -1,6 +1,5 @@
-// App.js
-import React from 'react';
-import Main from './Main';
+import React, { useEffect, useState } from "react";
+import Main from './Main'
 import Footer from './Footer';
 
 function App() {
