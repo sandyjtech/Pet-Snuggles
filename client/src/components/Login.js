@@ -27,6 +27,8 @@ export function InputAdornments() {
   };
   return (
     <div>
+          <img src={process.env.PUBLIC_URL + "Dogoutline.png"} width="150px" />
+          <h1>Pet Snuggles</h1>
     <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
       <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
       <OutlinedInput
