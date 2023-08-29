@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Switch, Route, } from "react-router-dom";
 import Main from './Main'
 import HomeContainer from './Home/HomeContainer';
-import PetProfile from './Home/PetProfile';
+import PetProfile from './PetProfile';
 import ProfileContainer from './Profile/ProfileContainer';
 import ScheduleContainer from './Schedule/ScheduleContainer'
 import FavoritesContainer from './Favorite/FavoritesContainer'
