@@ -5,7 +5,7 @@ import Header from '../Header'
 
 
 export default function HomeContainer() {
-  console.log('Test');
+  //console.log('Test');
   return (
     <div>
        <Header></Header>

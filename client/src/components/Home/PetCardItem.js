@@ -21,7 +21,7 @@ const EmptyHeart= () => {
 const PetCardItem = ({ name, image }) => {
   return (
     <div>
-     <h1>test</h1>
+     
       <img
         src={image}
         alt={name}
