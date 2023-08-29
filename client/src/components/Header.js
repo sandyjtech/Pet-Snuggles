@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -49,13 +49,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 function Header() {
+  const [searchTerm, setSearchTerm] = useState("");
+
   return (
 
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
         <div>
-          <img src={process.env.PUBLIC_URL + "Dogoutline.png"} width="150px" />
+          <img src={process.env.PUBLIC_URL + "Dogoutline.png"} alt="PetSnuggles logo" width="150px" />
         </div>
           <h1>Pet Snuggles</h1>
           <Typography
@@ -65,7 +67,9 @@ function Header() {
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
           </Typography>
-          <Search>
+          <Search
+            searchTerm={searchTerm}
+            onSearchChange={setSearchTerm}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>

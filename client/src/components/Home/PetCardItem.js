@@ -16,8 +16,9 @@ const EmptyHeart= () => {
       </a>
   );
 }
+//turn into a button, add to user id, sent to database favorites, userid, petid
 
-const PetCardItem = ({ Photo, Name, }) => {
+const PetCardItem = ({ Photo, Name }) => {
   return (
     <div>
       <img
@@ -33,5 +34,6 @@ const PetCardItem = ({ Photo, Name, }) => {
     </div>
   )
 }
+//need to add route to button
 
 export default PetCardItem
