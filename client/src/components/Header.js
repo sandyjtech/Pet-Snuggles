@@ -36,7 +36,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     width: '100%',
@@ -56,8 +55,9 @@ function Header() {
       <AppBar position="static">
         <Toolbar>
         <div>
-          Dog outline.png
+          <img src={process.env.PUBLIC_URL + "Dogoutline.png"} width="150px" />
         </div>
+          <h1>Pet Snuggles</h1>
           <Typography
             variant="h6"
             noWrap
