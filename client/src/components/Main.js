@@ -1,22 +1,21 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from './Header'
-import PetCard from'./PetCard'
-import Footer from './Footer'
+
+
 
 const Main = () => {
-  const [pet, setPet] = useState([])
+
+  const [pets, setPets] = useState([])
 
   useEffect(() => {
-    fetch('/pets')
-    .then(response => response.json())
-    .then(setPet)
+    fetch('http://localhost:3000/pets')
+      .then(response => response.json())
+      .then((pets) => setPets(pets))
   }, [])
 
-  return (
+return (
     <div>
       <Header></Header>
-      <PetCard></PetCard>
-      <Footer></Footer>
     </div>
   )
 }
