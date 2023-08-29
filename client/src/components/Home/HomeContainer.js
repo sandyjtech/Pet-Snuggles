@@ -1,17 +1,16 @@
 import React from 'react'
 import PetCards from './PetCards'
 import Header from '../Header'
-import { usePetContext } from '../../context/PetProvider'
 
 
-const Home = () => {
-  const { pets } = usePetContext();
+
+export default function HomeContainer() {
+  console.log('Test');
   return (
     <div>
-      <Header></Header>
-      <PetCards pets={pets}></PetCards>
+       <Header></Header>
+      <PetCards></PetCards>
     </div>
   )
 }
 
-export default Home
