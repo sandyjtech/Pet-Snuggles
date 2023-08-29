@@ -1,14 +1,12 @@
-import React from 'react';
+import React from 'react'
 
-const AccountDetails = ({ username, address, small_kids, own_pets, space}) => {
-
+const AccountDetails = ({ username, address, small_kids, own_pets, space }) => {
   return (
     <div>
-      <p>{username}</p>
-      <p>{address}</p>
-      <p>{small_kids}</p>
-      <p>{own_pets}</p>
-      <p>{space}</p>
+      <h1>Username: {username}</h1>
+      <p>Address: {address}</p>
+      <p>Small Kids: {small_kids}</p>
+      
     </div>
   )
 }

@@ -1,14 +1,17 @@
 import React from "react";
-import ReactDOM from 'react-dom/client';
+import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import App from "./components/App";
 import "./index.css";
-import { createRoot } from "react-dom/client";
+import App from "./components/App"
+import { PetProvider } from "./context/PetProvider";
 
-const container = document.getElementById("root");
-const root = createRoot(container);
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  <React.StrictMode>
     <BrowserRouter>
-    <App />
+      <PetProvider>
+        <App />
+      </PetProvider>
     </BrowserRouter>
-    );
+  </React.StrictMode>
+);

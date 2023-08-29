@@ -1,23 +1,24 @@
-import React, { useEffect, useState } from 'react'
-import Header from './Header'
+// Main.js
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import HomeContainer from './Home/HomeContainer';
+import PetProfile from './PetProfile';
+import ProfileContainer from './Profile/ProfileContainer';
+import ScheduleContainer from './Schedule/ScheduleContainer';
+import FavoritesContainer from './Favorite/FavoritesContainer';
 
-
-
-const Main = () => {
-
-  const [pets, setPets] = useState([])
-
-  useEffect(() => {
-    fetch('http://localhost:3000/pets')
-      .then(response => response.json())
-      .then((pets) => setPets(pets))
-  }, [])
-
-return (
+export default function Main() {
+  
+  return (
     <div>
-      <Header></Header>
+      <Switch>
+        <Route path="/pet-profile" ><PetProfile/> </Route>
+        <Route path="/profile" ><ProfileContainer/> </Route>
+        <Route path="/schedule"  ><ScheduleContainer/></Route>
+        <Route path="/favorites"  ><FavoritesContainer/> </Route>
+        <Route path="/"><HomeContainer /></Route>
+      </Switch>
     </div>
-  )
+  );
 }
 
-export default Main

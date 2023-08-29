@@ -3,13 +3,14 @@ import PetCards from './PetCards'
 import Header from '../Header'
 
 
-const Home = () => {
+
+export default function HomeContainer() {
+  console.log('Test');
   return (
     <div>
-      <Header></Header>
+       <Header></Header>
       <PetCards></PetCards>
     </div>
   )
 }
 
-export default Home

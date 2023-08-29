@@ -1,17 +1,17 @@
-import React from 'react'
-import PetCardItem from './PetCardItem'
+import React, { useContext } from 'react';
+import PetCardItem from './PetCardItem';
+import { PetContext } from "../../context/PetProvider"
 
-const PetCards = ({ pets }) => {
+const PetCards = () => {
+  const { pets } = useContext(PetContext);
+  
+  //console.log(pets)
+  
+  const petCards = pets.map((pet) => (
+    <PetCardItem key={pet.id} {...pet} />
+  ));
 
-  const petCards = pets.map((pet) => {
-    return <PetCardItem key={pet.id} {...pet}/>
-  })
-    
-  return (
-      <div>
-        {petCards}
-      </div>
-  )
-}
+  return <div>{petCards}</div>;
+};
 
-export default PetCards
+export default PetCards;
