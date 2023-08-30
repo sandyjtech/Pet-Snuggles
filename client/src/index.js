@@ -13,7 +13,7 @@ root.render(
       <UserAuthProvider>
         <PetProvider>
           <App />
-        </PetProvider>
+        </PetProvider>git pus
       </UserAuthProvider>
     </BrowserRouter>
   </React.StrictMode>
