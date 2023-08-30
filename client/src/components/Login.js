@@ -4,15 +4,12 @@ import * as Yup from "yup";
 import { useUserAuth } from "../context/UserAuthProvider";
 
 function Login() {
-  const { signUp, handleAuthSubmit, handleClick, error } = useUserAuth();
+  const { handleAuthSubmit, error } = useUserAuth(); // Remove signUp and handleClick
 
   return (
     <div>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <h2>Please Log In!</h2>
-      <p>
-        Not a member? <span onClick={handleClick}>Sign Up!</span>
-      </p>
       <Formik
         initialValues={{
           username: "",
@@ -26,7 +23,25 @@ function Login() {
           handleAuthSubmit(values, actions, 'login'); // Specify action type as 'login'
         }}
       >
-        {/* ... (rest of the formik form) */}
+        {({ isSubmitting }) => (
+          <Form>
+            <div>
+              <label htmlFor="username">Username</label>
+              <Field type="text" id="username" name="username" />
+              <ErrorMessage name="username" />
+            </div>
+            <div>
+              <label htmlFor="password">Password</label>
+              <Field type="password" id="password" name="password" />
+              <ErrorMessage name="password" />
+            </div>
+            <div>
+              <button type="submit" disabled={isSubmitting}>
+                {isSubmitting ? "Loading..." : "Log In"}
+              </button>
+            </div>
+          </Form>
+        )}
       </Formik>
     </div>
   );
