@@ -41,5 +41,7 @@ const PetCardItem = ({ name, image }) => {
   );
 };
 
+
 export default PetCardItem;
+
 

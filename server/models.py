@@ -127,3 +127,4 @@ class Schedule(db.Model, SerializerMixin):
     def __repr__(self):
         return f'Schedule (user_id={self.user_id}, pet_id={self.pet_id}, Time and Date={self.date_time})'
     
+    

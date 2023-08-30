@@ -53,3 +53,4 @@ const PetProfile = ({ animal_type, name, age, breed, sex, size, temperament, goo
 
 
 export default PetProfile
+
