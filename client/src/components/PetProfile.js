@@ -16,7 +16,7 @@ const PetProfile = () => {
   const [showTime, setShowTime] = useState(false) 
   
   useEffect(() => {
-    fetch(`/pets/id=${id}`)
+    fetch(`/pet-profile/id=${id}`)
         .then(res => res.json())
         .then((pet) => {
           console.log('Pet data:', pet); // Add this line to check the data
