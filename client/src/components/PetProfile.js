@@ -3,7 +3,7 @@ import { Button } from '@mui/base';
 import { Link } from 'react-router-dom';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import Times from './Times.js';
+import Time from './Time.js';
 
 
 const PetProfile = ({ animal_type, name, age, breed, sex, size, temperament, good_wt_kids, good_wt_pets, image, adoption_link }) => {
@@ -26,7 +26,7 @@ const PetProfile = ({ animal_type, name, age, breed, sex, size, temperament, goo
     <Link to={adoption_link}><Button>Adopt</Button>
     </Link>
       <div className="calendar">
-        <h2 className="header">Booking Calendar</h2>
+      <h1 className="header">Booking Calendar</h1>
       <div className="calendar-container">
         <Calendar onChange={setDate} value={date} onClickDay={() => setShowTime(true)}/>
       </div>
@@ -40,17 +40,17 @@ const PetProfile = ({ animal_type, name, age, breed, sex, size, temperament, goo
    </p>
           ) : (
    <p>
-      <span>Selected date: </span>{date.toDateString()}
+      <span>Default selected date:</span>{date.toDateString()}
    </p> 
           )
    }
-   <Times showTime={showTime} date={date}/>
-   <Link to="/schedule"><Button>Schedule a Snuggle</Button></Link>
+   <Time showTime={showTime} date={date}/>
 
  </div>
  </div>
   )
 }
-//schedule a snuggle needs to go to user schedule and persist
+
 
 export default PetProfile
+
