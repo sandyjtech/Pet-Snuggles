@@ -42,6 +42,10 @@ Open to contributions. Reach out if you'd like to contribute, we'd love to hear 
 
 ***
 
+## Figma Wireframe
+![Pet Snuggles Wireframe](https://github.com/sandyjtech/Pet-Snuggles/assets/128105913/5bfad6d9-4079-4be4-913e-90c14e939256)
+
+
 ## Material UI Icons
 
 Search- 
