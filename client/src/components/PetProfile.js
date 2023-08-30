@@ -3,7 +3,7 @@ import { Button } from '@mui/base';
 import { Link } from 'react-router-dom';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import Time from './Time.js';
+import Time from './Times.js';
 
 
 const PetProfile = ({ animal_type, name, age, breed, sex, size, temperament, good_wt_kids, good_wt_pets, image, adoption_link }) => {

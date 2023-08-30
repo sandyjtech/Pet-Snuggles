@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom"; // Import useHistory
+import { useHistory } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useUserAuth } from "../context/UserAuthProvider";
@@ -10,6 +10,8 @@ function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   
+  const history = useHistory();
+
   const spaceOptions = [
     "Owned-Home with no yard",
     "Owned-Home with yard",
@@ -17,7 +19,7 @@ function Signup() {
     "Leased-Home with yard",
   ];
 
-  const history = useHistory(); 
+
 
   return (
     <div>
@@ -60,8 +62,11 @@ function Signup() {
                 .required("Email is required")
             : Yup.string(),
         })}
-        onSubmit={(values, actions) => {
-          handleAuthSubmit(values, actions, "signup");
+        onSubmit={async (values, actions) => {
+          const userId = await handleAuthSubmit(values, actions, "signup");
+          if (userId) {
+            history.push(`/users/${userId}`); // Redirect to UserDetailsById
+          }
         }}
       >
         {({ isSubmitting }) => (
@@ -132,7 +137,7 @@ function Signup() {
               </div>
             )}
             <div>
-              <button type="submit" disabled={isSubmitting}>
+            <button type="submit" disabled={isSubmitting}>
                 {isSubmitting ? "Loading..." : "Sign Up"}
               </button>
             </div>
