@@ -6,7 +6,7 @@ const MyProfile = () => {
   const [users, setUsers] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3000/users')
+    fetch('/users')
       .then(response => response.json())
       .then((users) => setUsers(users))
   }, [])
