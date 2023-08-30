@@ -12,18 +12,24 @@ from models import User, Pet, Favorite, Schedule
 
       
 ##############Authenticated User (Protected Routes) #################
-@app.before_request
-def check_if_user_logged_in():
-    open_access_list = ['pets', 'signup', 'login', 'logout']
-    if request.endpoint not in open_access_list and not session.get("user_id"):
-        return {'error': 'Not logged in'}, 401
+# @app.before_request
+# def check_if_user_logged_in():
+#     open_access_list = ['pets', 'signup', 'login', 'logout']
+#     if request.endpoint not in open_access_list and not session.get("user_id"):
+#         return {'error': 'Not logged in'}, 401
         
 # Home Component is available to unauthorized
 class Pets(Resource):
     def get(self):
         pets = [pet.to_dict() for pet in Pet.query.all()]
         return make_response(pets, 200)
-    
+class PetsById(Resource):
+    def get(self, id):
+        pet = Pet.query.filter_by(id=id).first()
+        if not pet:
+            raise ValueError("Could not find pet")
+        return make_response(pet.to_dict(), 200)
+            
 class UserDetailsById(Resource):
     def get(self, id):
         user = User.query.filter_by(id=id).first()
@@ -170,10 +176,12 @@ api.add_resource(Logout, '/logout')
 api.add_resource(Favorites, '/favorites')
 api.add_resource(FavoritesById, '/favorites/<int:id>')
 api.add_resource(Pets, '/pets', endpoint='pets')
+api.add_resource(PetsById, '/pets/<int:id>', endpoint='/pets/<int:id>')
 api.add_resource(UserDetailsById, '/users/<int:id>')
 api.add_resource(Schedules, '/schedules', endpoint='schedules')
 api.add_resource(ScheduleById, '/schedules/<int:id>', endpoint="schedule")
 # Run the app if executed directly
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
+
 
