@@ -1,30 +1,70 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
-export const UserAuthContext = createContext();
+// Create a context for user authentication
+const UserAuthContext = createContext();
 
-export function UserAuthProvider({ children }) {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+// Custom hook to access the UserAuthContext
+export const useUserAuth = () => {
+  return useContext(UserAuthContext);
+};
+
+// User authentication provider component
+const UserAuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [error, setError] = useState(null);
+  const [signUp, setSignUp] = useState(false);
 
-  const login = async (username, password) => {
+  // Function to handle user login and signup
+  const handleLoginSubmit = async (values, actions) => {
     try {
-      // Your login logic here...
-      // Make API request, update isAuthenticated and user state, etc.
+      // Make API call to your backend for login or signup
+      const response = await fetch('/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values), // values contain username and password
+      });
+
+      if (response.ok) {
+        const userData = await response.json();
+        setUser(userData);
+      } else {
+        setError('Invalid username or password');
+      }
     } catch (error) {
-      console.error('Error during login:', error);
+      setError('An error occurred');
     }
   };
 
-  const logout = () => {
-    setIsAuthenticated(false);
-    setUser(null);
+  // Function to handle user logout
+  const handleLogout = async () => {
+    try {
+      // Make API call to your backend for logout
+      await fetch('/logout', {
+        method: 'DELETE',
+      });
+
+      setUser(null);
+    } catch (error) {
+      console.error('Logout error:', error);
+    }
   };
 
+  // Function to toggle between login and signup
+  const handleClick = () => {
+    setSignUp(!signUp);
+    setError(null);
+  };
+
+  // Context value to provide to consuming components
   const contextValue = {
-    isAuthenticated,
     user,
-    login,
-    logout,
+    error,
+    signUp,
+    handleLoginSubmit,
+    handleLogout,
+    handleClick,
   };
 
   return (
@@ -32,4 +72,6 @@ export function UserAuthProvider({ children }) {
       {children}
     </UserAuthContext.Provider>
   );
-}
+};
+
+export default UserAuthProvider;

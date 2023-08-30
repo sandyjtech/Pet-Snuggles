@@ -1,10 +1,11 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
+
 import "./index.css";
 import App from "./components/App";
 import { PetProvider } from "./context/PetProvider";
-import { UserAuthProvider } from "./context/UserAuthProvider";
+import UserAuthProvider from "./context/UserAuthProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -16,5 +17,5 @@ root.render(
         </PetProvider>
       </UserAuthProvider>
     </BrowserRouter>
-  </React.StrictMode>
-);
+  </React.StrictMode>,
+  );
