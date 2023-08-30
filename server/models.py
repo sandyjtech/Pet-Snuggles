@@ -1,9 +1,10 @@
 #models.py
 from sqlalchemy_serializer import SerializerMixin
 from sqlalchemy.ext.associationproxy import association_proxy
+from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy.orm import validates
-from config import db
-import bcrypt
+from config import db, bcrypt
+
 
 # Models go here!
 class User(db.Model, SerializerMixin):
@@ -11,10 +12,10 @@ class User(db.Model, SerializerMixin):
     
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(15), nullable=False)
-    _password = db.Column('password', db.String(), nullable=False)
+    _password = db.Column(db.String(), nullable=False)
     address = db.Column(db.String, nullable=False)
-    small_kids = db.Column(db.Boolean, nullable=False)
-    own_pets = db.Column(db.Boolean, nullable=False)
+    small_kids = db.Column(db.Boolean, )
+    own_pets = db.Column(db.Boolean, )
     space = db.Column(db.String)
     
     favorites = db.relationship("Favorite", backref="user")
@@ -48,19 +49,19 @@ class User(db.Model, SerializerMixin):
 
         return value       
     
-    @property
+    @hybrid_property
     def password(self):
         return self._password
 
     @password.setter
     def password(self, plaintext_password):
         # Hash the password using bcrypt
-        hashed_password = bcrypt.hashpw(plaintext_password.encode('utf-8'), bcrypt.gensalt())
+        hashed_password = bcrypt.generate_password_hash(plaintext_password.encode("utf-8"))
         self._password = hashed_password.decode('utf-8')
 
     def check_password(self, plaintext_password):
         # Check if the provided password matches the hashed one
-        return bcrypt.checkpw(plaintext_password.encode('utf-8'), self._password.encode('utf-8'))
+        return bcrypt.check_password_hash(self._password, plaintext_password.encode('utf-8'))
 
             
     def __repr__(self):
@@ -125,4 +126,5 @@ class Schedule(db.Model, SerializerMixin):
     
     def __repr__(self):
         return f'Schedule (user_id={self.user_id}, pet_id={self.pet_id}, Time and Date={self.date_time})'
+    
     

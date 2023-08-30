@@ -1,21 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import Header from '../Header'
-import AccountDetails from './AccountDetails'
+import React, { useState, useEffect } from "react";
+import Header from "../Header";
+import AccountDetails from "./AccountDetails";
+import { useParams } from "react-router-dom"; // Import useParams to get user ID
 
 const MyProfile = () => {
-  const [users, setUsers] = useState([])
+  const [user, setUser] = useState(null);
+  const { id } = useParams(); // Get the user ID from the route params
 
   useEffect(() => {
-    fetch('http://localhost:3000/users')
+    fetch(`/users/${id}`) // Fetch user data based on the ID
       .then(response => response.json())
-      .then((users) => setUsers(users))
-  }, [])
+      .then(user => setUser(user));
+  }, [id]);
+
   return (
     <div>
-      <Header></Header>
-      <AccountDetails></AccountDetails>
+      <Header />
+      {user && (
+        <AccountDetails
+          username={user.username}
+          address={user.address}
+          small_kids={user.small_kids}
+          own_pets={user.own_pets}
+          space={user.space}
+        />
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default MyProfile
+export default MyProfile;

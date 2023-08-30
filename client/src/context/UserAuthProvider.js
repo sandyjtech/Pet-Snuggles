@@ -1,30 +1,66 @@
-import React, { createContext, useState } from 'react';
+// UserAuthProvider.js
+import React, { createContext, useContext, useState } from 'react';
 
-export const UserAuthContext = createContext();
+const UserAuthContext = createContext();
 
-export function UserAuthProvider({ children }) {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+export const useUserAuth = () => {
+  return useContext(UserAuthContext);
+};
+
+const UserAuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [error, setError] = useState(null);
+  const [signUp, setSignUp] = useState(false);
 
-  const login = async (username, password) => {
+  const handleAuthSubmit = async (values, actions, authType) => {
     try {
-      // Your login logic here...
-      // Make API request, update isAuthenticated and user state, etc.
+      // Determine the endpoint based on authType
+      const endpoint = authType === 'signup' ? '/signup' : '/login';
+
+      const response = await fetch(`${endpoint}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+      console.log(endpoint)
+      if (response.ok) {
+        const userData = await response.json();
+        setUser(userData);
+      } else {
+        setError('Authentication error'); 
+      }
     } catch (error) {
-      console.error('Error during login:', error);
+      setError('An error occurred');
+    }
+    
+  };
+
+  const handleLogout = async () => {
+    try {
+      await fetch('/logout', {
+        method: 'DELETE',
+      });
+
+      setUser(null);
+    } catch (error) {
+      console.error('Logout error:', error);
     }
   };
 
-  const logout = () => {
-    setIsAuthenticated(false);
-    setUser(null);
+  const handleClick = () => {
+    setSignUp(!signUp);
+    setError(null);
   };
 
   const contextValue = {
-    isAuthenticated,
     user,
-    login,
-    logout,
+    error,
+    signUp,
+    handleAuthSubmit,
+    handleLogout,
+    handleClick,
   };
 
   return (
@@ -32,4 +68,6 @@ export function UserAuthProvider({ children }) {
       {children}
     </UserAuthContext.Provider>
   );
-}
+};
+
+export default UserAuthProvider;
