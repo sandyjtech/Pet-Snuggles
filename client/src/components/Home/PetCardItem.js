@@ -22,10 +22,11 @@ const EmptyHeart = () => {
   );
 };
 
-const PetCardItem = ({ name, image }) => {
+const PetCardItem = ({ name, image, id }) => {
   return (
     <div>
       <Card sx={{ maxWidth: 345 }}>
+
         <CardMedia sx={{ height: 345 }} image={image} alt={name} />
         <CardContent>
           <h2>{name}</h2>
@@ -36,6 +37,7 @@ const PetCardItem = ({ name, image }) => {
             <Button>Book</Button>
           </NavLink>
         </CardActions>
+
       </Card>
     </div>
   );
