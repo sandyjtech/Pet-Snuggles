@@ -129,7 +129,7 @@ class Signup(Resource):
         try:
             new_user = User(
                 username=req_json["username"],
-                _password=req_json["_password"],
+                password=req_json["password"],
                 address=req_json["address"],                
                 small_kids=req_json["small_kids"],
                 own_pets=req_json["own_pets"],
@@ -142,7 +142,7 @@ class Signup(Resource):
         session["user_id"] = new_user.id
         return make_response(new_user.to_dict(), 201)
     
-api.add_resource(Signup, "/signup")
+
     
 class Login(Resource):
 
@@ -155,12 +155,15 @@ class Login(Resource):
             return user.to_dict(), 200
         return {'error': 'Invalid username or password'}, 401
 
+
 class Logout(Resource):
 
     def delete(self): # just add this line!
         session['user_id'] = None
         return {'message': '204: No Content'}, 204
 
+api.add_resource(Signup, "/signup")
+api.add_resource(Login, "/login")
 api.add_resource(Logout, '/logout')
 
 # Add the resources to the API

@@ -7,7 +7,7 @@ function PetProvider ({ children })  {
   // Other state for user interactions, favorites, etc.
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5555/pets") // Use the correct API endpoint here
+    fetch("/pets") // Use the correct API endpoint here
       .then((r) => {
         if (r.ok) {
           return r.json();

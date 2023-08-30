@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom"; // Import useHistory
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useUserAuth } from "../context/UserAuthProvider";
-
+import Visibility from "@mui/icons-material/Visibility";
 
 function Signup() {
   const { signUp, handleAuthSubmit, handleClick, error } = useUserAuth();
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  
+  const spaceOptions = [
+    "Owned-Home with no yard",
+    "Owned-Home with yard",
+    "Lease-Home with no yard",
+    "Leased-Home with yard",
+  ];
+
+  const history = useHistory(); 
 
   return (
     <div>
@@ -18,25 +30,38 @@ function Signup() {
         initialValues={{
           username: "",
           password: "",
+          confirmPassword: "",
           address: "",
           small_kids: false,
           own_pets: false,
           space: "",
-          email: "", // Add this if you want to match your model structure
+          email: "",
         }}
         validationSchema={Yup.object({
           username: Yup.string().required("Username is required"),
-          password: Yup.string().required("Password is required"),
+          password: Yup.string()
+          .required("Password is required")
+          .min(6, "Password must be at least 6 characters long.")
+          .matches(/[A-Z]/, "Password must contain at least one uppercase letter.")
+          .matches(/[0-9]/, "Password must contain at least one digit.")
+          .matches(/[!@#$%^&*()_\-+=<>?/~.]/, "Password must contain at least one special character."),
+          confirmPassword: signUp
+            ? Yup.string()
+                .oneOf([Yup.ref("password"), null], "Passwords must match")
+                .required("Confirm Password is required")
+            : Yup.string(),
           address: Yup.string().required("Address is required"),
           small_kids: Yup.boolean(),
           own_pets: Yup.boolean(),
           space: Yup.string(),
           email: signUp
-            ? Yup.string().email("Invalid email address").required("Email is required")
+            ? Yup.string()
+                .email("Invalid email address")
+                .required("Email is required")
             : Yup.string(),
         })}
         onSubmit={(values, actions) => {
-          handleAuthSubmit(values, actions, "signup"); // Specify action type as 'signup'
+          handleAuthSubmit(values, actions, "signup");
         }}
       >
         {({ isSubmitting }) => (
@@ -49,12 +74,30 @@ function Signup() {
             <div>
               <label htmlFor="password">Password</label>
               <Field
-                type="password"
+                type={showPassword ? "text" : "password"}
                 id="password"
                 name="password"
                 autoComplete="current-password"
               />
+              <Visibility
+                onClick={() => setShowPassword(!showPassword)}
+                style={{ cursor: "pointer" }}
+              />
               <ErrorMessage name="password" />
+            </div>
+            <div>
+              <label htmlFor="confirmPassword">Confirm Password</label>
+              <Field
+                type={showConfirmPassword ? "text" : "password"}
+                id="confirmPassword"
+                name="confirmPassword"
+                autoComplete="current-password"
+              />
+              <Visibility
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                style={{ cursor: "pointer" }}
+              />
+              <ErrorMessage name="confirmPassword" />
             </div>
             <div>
               <label htmlFor="address">Address</label>
@@ -71,7 +114,14 @@ function Signup() {
             </div>
             <div>
               <label htmlFor="space">Space</label>
-              <Field type="text" id="space" name="space" />
+              <Field as="select" id="space" name="space">
+                <option value="">Select space option</option>
+                {spaceOptions.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </Field>
               <ErrorMessage name="space" />
             </div>
             {signUp && (
