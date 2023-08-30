@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -68,6 +68,10 @@ function Header() {
   const [isSignupModalOpen, setSignupModalOpen] = useState(false);
   const { handleLogout, user } = useUserAuth(); // Updated context hook usage
 
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
   const handleModalOpen = (modalType) => {
     if (modalType === "login") {
       setLoginModalOpen(true);
@@ -101,13 +105,15 @@ function Header() {
           >
             Pet Snuggles
           </Typography>
-          <Search searchTerm={searchTerm} onSearchChange={setSearchTerm}>
+          <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
+              value={searchTerm}
+              onChange={handleSearchChange} // Call the handleSearchChange function on input change
             />
           </Search>
           <div>
@@ -153,3 +159,4 @@ function Header() {
 }
 
 export default Header;
+
