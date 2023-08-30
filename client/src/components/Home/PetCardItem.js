@@ -23,7 +23,7 @@ const EmptyHeart= () => {
 }
 //turn into a button, add to user id, sent to database favorites, userid, petid
 
-const PetCardItem = ({ name, image }) => {
+const PetCardItem = ({ name, image, id }) => {
   return (
     <div>
       <Card sx={{ maxWidth: 345 }}>
@@ -38,7 +38,7 @@ const PetCardItem = ({ name, image }) => {
       </CardContent>
       <CardActions>
         <EmptyHeart align='right'/>
-        <NavLink to="/pet-profile"><Button>Book</Button></NavLink>
+        <NavLink to={`/pet-profile/${id}`}><Button>Book</Button></NavLink>
       </CardActions>
       </Card>
     </div>
