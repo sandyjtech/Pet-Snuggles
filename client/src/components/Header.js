@@ -97,10 +97,12 @@ function Header() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <div>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
             <img src={process.env.PUBLIC_URL + "Dogoutline.png"} alt="PetSnuggles logo" width="150px" />
           </div>
+          <div style={{ marginLeft: '15px' }}>
           <h1>Pet Snuggles</h1>
+          </div>
           <Typography
             variant="h6"
             noWrap
