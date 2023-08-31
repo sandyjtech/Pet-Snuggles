@@ -1,18 +1,19 @@
-import React, { useState } from "react";
-import { styled, alpha } from "@mui/material/styles";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import InputBase from "@mui/material/InputBase";
-import SearchIcon from "@mui/icons-material/Search";
-import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import DialogTitle from "@mui/material/DialogTitle";
-import DialogContent from "@mui/material/DialogContent";
-import { useUserAuth } from "../context/UserAuthProvider"; // Updated import
-import Login from "./Login";
-import Signup from "./Signup";
+import React, { useContext, useState } from 'react';
+import { styled, alpha } from '@mui/material/styles';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import InputBase from '@mui/material/InputBase';
+import SearchIcon from '@mui/icons-material/Search';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import { useUserAuth  } from "../context/UserAuthProvider";
+import { PetContext } from "../context/PetProvider";
+import Login from './Login';
+import Signup from './Signup';
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -52,6 +53,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+
 const StyledButton = styled(Button)(({ theme }) => ({
   backgroundColor: "black",
   color: theme.palette.common.white,
@@ -63,14 +65,11 @@ const StyledButton = styled(Button)(({ theme }) => ({
 }));
 
 function Header() {
-  const [searchTerm, setSearchTerm] = useState("");
+  const { pets } = useContext(PetContext);
+  const [searchTerm, setSearchTerm] = useState('');
   const [isLoginModalOpen, setLoginModalOpen] = useState(false);
   const [isSignupModalOpen, setSignupModalOpen] = useState(false);
   const { handleLogout, user } = useUserAuth(); // Updated context hook usage
-
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
 
   const handleModalOpen = (modalType) => {
     if (modalType === "login") {
@@ -85,17 +84,19 @@ function Header() {
     setSignupModalOpen(false);
   };
 
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value.toLowerCase());
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <div>
-            {/* Logo */}
-            <img
-              src={process.env.PUBLIC_URL + "Dogoutline.png"}
-              alt="PetSnuggles logo"
-              width="150px"
-            />
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <img src={process.env.PUBLIC_URL + "Dogoutline.png"} alt="PetSnuggles logo" width="150px" />
+          </div>
+          <div style={{ marginLeft: '15px' }}>
+          <h1> Pet Snuggles </h1>
           </div>
           <Typography
             variant="h6"
@@ -111,9 +112,9 @@ function Header() {
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
+              inputProps={{ 'aria-label': 'search' }}
               value={searchTerm}
-              onChange={handleSearchChange} // Call the handleSearchChange function on input change
+              onChange={handleSearchChange}
             />
           </Search>
           <div>
@@ -155,8 +156,9 @@ function Header() {
         </Toolbar>
       </AppBar>
     </Box>
-  );
+  )
 }
 
 export default Header;
+
 

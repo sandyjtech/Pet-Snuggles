@@ -1,23 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom';
+import React from 'react'
 
-const AccountDetails = () => {
-    const {id} = useParams()
-    const [profile, setProfile] = useState([])
-    
-    useEffect(() => {
-    fetch(`/profile/${id}`)
-        .then(res => res.json())
-        .then((profile) => {setProfile(profile);});
-}, [id])
-
+const AccountDetails = ({ username, address, small_kids, own_pets, space }) => {
+  const smallKidsText = small_kids ? 'Yes' : 'No';
+  const ownPetsText = own_pets ? 'Yes' : 'No';
+  
   return (
     <div>
-      <h1>Username: {profile.username}</h1>
-      <p>Address: {profile.address}</p>
-      <p>Small Kids: {profile.small_kids}</p>
-      <p>Pets: {profile.own_pets}</p>
-      <p>Space: {profile.space}</p>
+      <h1>Username: {username}</h1>
+      <p>Address: {address}</p>
+      <p>Small Kids: {smallKidsText}</p>
+      <p>Pets: {ownPetsText}</p>
+      <p>Space: {space}</p>
     </div>
   )
 }

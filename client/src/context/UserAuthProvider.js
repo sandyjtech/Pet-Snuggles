@@ -38,7 +38,41 @@ const UserAuthProvider = ({ children }) => {
   };
 
   const handleLogout = async () => {
+  const [error, setError] = useState(null);
+  const [signUp, setSignUp] = useState(false);
+
+  const handleAuthSubmit = async (values, actions, authType) => {
     try {
+      // Determine the endpoint based on authType
+      const endpoint = authType === 'signup' ? '/signup' : '/login';
+
+      const response = await fetch(`${endpoint}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+      console.log(endpoint)
+      if (response.ok) {
+        const userData = await response.json();
+        setUser(userData);
+      } else {
+        setError('Authentication error'); 
+      }
+    } catch (error) {
+      setError('An error occurred');
+    }
+    
+  };
+
+  const handleLogout = async () => {
+    try {
+      await fetch('/logout', {
+        method: 'DELETE',
+      });
+
+      setUser(null);
       await fetch('/logout', {
         method: 'DELETE',
       });
@@ -46,9 +80,13 @@ const UserAuthProvider = ({ children }) => {
       setUser(null);
     } catch (error) {
       console.error('Logout error:', error);
+      console.error('Logout error:', error);
     }
   };
 
+  const handleClick = () => {
+    setSignUp(!signUp);
+    setError(null);
   const handleClick = () => {
     setSignUp(!signUp);
     setError(null);
@@ -56,6 +94,7 @@ const UserAuthProvider = ({ children }) => {
 
   const contextValue = {
     user,
+    setUser,
     error,
     signUp,
     handleAuthSubmit,
@@ -69,5 +108,7 @@ const UserAuthProvider = ({ children }) => {
     </UserAuthContext.Provider>
   );
 };
+}
+}
 
 export default UserAuthProvider;

@@ -14,8 +14,8 @@ export default function Main() {
       <Switch>
         <Route path="/pets/:id" ><PetProfile/> </Route>
         <Route path="/profile/:id" ><ProfileContainer/> </Route>
-        <Route path="/schedule"  ><ScheduleContainer/></Route>
-        <Route path="/favorites"  ><FavoritesContainer/> </Route>
+        <Route path="/schedule/:id" ><ScheduleContainer/></Route>        
+        <Route path="/favorites/:id" ><FavoritesContainer/></Route>
         <Route path="/"><HomeContainer /></Route>
       </Switch>
     </div>

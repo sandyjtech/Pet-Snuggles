@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import { useUserAuth } from "../context/UserAuthProvider";
 import Visibility from "@mui/icons-material/Visibility";
 
-function Signup() {
+function Signup({onSignup}) {
   const { signUp, handleAuthSubmit, handleClick, error } = useUserAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -62,11 +62,11 @@ function Signup() {
                 .required("Email is required")
             : Yup.string(),
         })}
-        onSubmit={async (values, actions) => {
-          const userId = await handleAuthSubmit(values, actions, "signup");
-          if (userId) {
-            history.push(`/users/${userId}`); // Redirect to UserDetailsById
-          }
+        onSubmit={(values, actions) => {
+          handleAuthSubmit(values, actions, "signup");
+          history.push("/profile/:id");     
+       
+          onSignup();
         }}
       >
         {({ isSubmitting }) => (
@@ -139,6 +139,7 @@ function Signup() {
             <div>
             <button type="submit" disabled={isSubmitting}>
                 {isSubmitting ? "Loading..." : "Sign Up"}
+                
               </button>
             </div>
           </Form>
@@ -149,4 +150,3 @@ function Signup() {
 }
 
 export default Signup;
-
