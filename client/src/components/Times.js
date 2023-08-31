@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from '@mui/material/Button';
 import Calendar from 'react-calendar';
 import './PetProfile';
 
@@ -21,12 +22,12 @@ return (
    {time.map(times => {
     return (
     <div>
-      <button onClick={(e)=> displayInfo(e)}> {times} </button>
+      <Button variant="outlined" onClick={(e)=> displayInfo(e)}> {times} </Button>
     </div>
         )
      })}
     <div>
-      {info ? `Your appointment is set to ${event} ${props.date.toDateString()}` : null}
+      {info ? `Your snuggle is set to ${event} ${props.date.toDateString()}` : null}
     </div>
  </div>
   )

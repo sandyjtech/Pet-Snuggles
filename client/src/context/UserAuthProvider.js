@@ -37,6 +37,16 @@ const UserAuthProvider = ({ children }) => {
     
   };
 
+  const checkAuthorized = async () => {
+    const response = await fetch('/authorized')
+    if (response.ok) {
+      const user = await response.json();
+      setUser(user);
+    }else {
+       setError('Bad credentials');
+    }
+  }
+
   const handleLogout = async () => {
     try {
       await fetch('/logout', {
@@ -56,11 +66,13 @@ const UserAuthProvider = ({ children }) => {
 
   const contextValue = {
     user,
+    setUser,
     error,
     signUp,
     handleAuthSubmit,
     handleLogout,
     handleClick,
+    checkAuthorized,
   };
 
   return (

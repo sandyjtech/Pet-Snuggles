@@ -2,9 +2,13 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useUserAuth } from "../context/UserAuthProvider";
+import { useHistory } from "react-router-dom";
 
-function Login() {
-  const { handleAuthSubmit, error } = useUserAuth(); // Remove signUp and handleClick
+
+function Login({onLogin}) {
+  const history = useHistory();
+
+  const { handleAuthSubmit, error } = useUserAuth(); 
 
   return (
     <div>
@@ -20,7 +24,9 @@ function Login() {
           password: Yup.string().required("Password is required"),
         })}
         onSubmit={(values, actions) => {
-          handleAuthSubmit(values, actions, 'login'); // Specify action type as 'login'
+          handleAuthSubmit(values, actions, 'login');
+          history.push("/profile/:id");
+          onLogin();
         }}
       >
         {({ isSubmitting }) => (
