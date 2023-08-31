@@ -16,23 +16,22 @@ const PetProfile = () => {
   const [showTime, setShowTime] = useState(false) 
   
   useEffect(() => {
-    fetch(`/pet-profile/id=${id}`)
+    fetch(`/pets/${id}`)
         .then(res => res.json())
-        .then((pet) => {
-          console.log('Pet data:', pet); // Add this line to check the data
-          setPet(pet[0]);
-        });
-}, [])
-
+        .then((pet) => {setPet(pet);});
+}, [id])
+if (!pet){
+  return <h2>loading</h2>
+}
   return (
     <div>
       <h2>{pet.animal_type}</h2>
-      <p>{pet.image}</p>
-      <h2>Name:{pet.name}</h2>
-      <p>Age:{pet.age}</p>
-      <p>Breed:{pet.breed}</p>
-      <p>Gender:{pet.sex}</p>
-      <p>Size:{pet.size}</p>
+      <img src={pet.image} alt="Pet"/>
+      <h2>Name: {pet.name}</h2>
+      <p>Age: {pet.age}</p>
+      <p>Breed: {pet.breed}</p>
+      <p>Gender: {pet.sex}</p>
+      <p>Size: {pet.size}</p>
       <p>Temperament:{pet.temperament}</p>
       <p>Good with Kids:{pet.good_wt_kids}</p>
       <p>Good with other pets: {pet.good_wt_pets}</p>
