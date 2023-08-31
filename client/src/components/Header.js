@@ -55,12 +55,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 
 const StyledButton = styled(Button)(({ theme }) => ({
-  backgroundColor: "black",
+  backgroundColor: 'black', // Green pastel color
   color: theme.palette.common.white,
   borderRadius: "15%",
   margin: "5px",
-  "&:hover": {
-    backgroundColor: "#7bc68c",
+  '&:hover': {
+    backgroundColor: '#7bc68c', // Slightly darker shade on hover
   },
 }));
 
@@ -79,13 +79,16 @@ function Header() {
     }
   };
 
-  const handleModalClose = () => {
+  const handleLoginModalClose = () => {
     setLoginModalOpen(false);
-    setSignupModalOpen(false);
   };
 
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value.toLowerCase());
+  const handleSignupModalOpen = () => {
+    setSignupModalOpen(true);
+  };
+
+  const handleSignupModalClose = () => {
+    setSignupModalOpen(false);
   };
 
   return (
@@ -95,8 +98,8 @@ function Header() {
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <img src={process.env.PUBLIC_URL + "Dogoutline.png"} alt="PetSnuggles logo" width="150px" />
           </div>
-          <div style={{ marginLeft: '15px' }}>
-          <h1> Pet Snuggles </h1>
+          <div style={{ marginLeft: '10px' }}>
+            <h1>Pet Snuggles</h1>
           </div>
           <Typography
             variant="h6"
@@ -104,17 +107,17 @@ function Header() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            Pet Snuggles
           </Typography>
-          <Search>
+          <Search
+            searchTerm={searchTerm}
+            onSearchChange={setSearchTerm}
+          >
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
-              value={searchTerm}
-              onChange={handleSearchChange}
             />
           </Search>
           <div>
@@ -124,35 +127,27 @@ function Header() {
               </StyledButton>
             ) : (
               <>
-                <StyledButton
-                  variant="outlined"
-                  onClick={() => handleModalOpen("login")}
-                >
+                <StyledButton variant="outlined" onClick={handleLoginModalOpen}>
                   Login
                 </StyledButton>
-                <StyledButton
-                  variant="outlined"
-                  onClick={() => handleModalOpen("signup")}
-                >
+                <StyledButton variant="outlined" onClick={handleSignupModalOpen}>
                   Signup
                 </StyledButton>
+                <Dialog open={isLoginModalOpen} onClose={handleLoginModalClose}>
+                  <DialogTitle>Login</DialogTitle>
+                  <DialogContent>
+                    <Login onLogin={() => handleLoginModalClose()} />
+                  </DialogContent>
+                </Dialog>
+                <Dialog open={isSignupModalOpen} onClose={handleSignupModalClose}>
+                  <DialogTitle>Signup</DialogTitle>
+                  <DialogContent>
+                    <Signup />
+                  </DialogContent>
+                </Dialog>
               </>
             )}
           </div>
-
-          {/* Login and Signup modals */}
-          <Dialog open={isLoginModalOpen} onClose={handleModalClose}>
-            <DialogTitle>Login</DialogTitle>
-            <DialogContent>
-              <Login onLogin={handleModalClose} />
-            </DialogContent>
-          </Dialog>
-          <Dialog open={isSignupModalOpen} onClose={handleModalClose}>
-            <DialogTitle>Signup</DialogTitle>
-            <DialogContent>
-              <Signup onSignup={handleModalClose} />
-            </DialogContent>
-          </Dialog>
         </Toolbar>
       </AppBar>
     </Box>
@@ -160,5 +155,4 @@ function Header() {
 }
 
 export default Header;
-
 
