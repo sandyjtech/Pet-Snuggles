@@ -7,7 +7,7 @@ import json
 
 # Local imports
 from app import app, db
-from models import User, Pet
+from models import User, Pet, Favorite
 
 fake = Faker()
 
@@ -35,9 +35,9 @@ if __name__ == "__main__":
     with app.app_context():
         print("Starting seed...")
 
-        # Clear existing user data from the database
         print("Clearing user data...")
-        User.query.delete()
+        ##User.query.delete()
+        Favorite.query.delete()
         db.session.commit()
 
         # # Seed users
