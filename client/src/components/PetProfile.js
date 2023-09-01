@@ -94,4 +94,8 @@ if (!pet){
 }
 
 
+<<<<<<< HEAD
 export default PetProfile
+=======
+export default PetProfile
+>>>>>>> 85d5c5e (added all MVP code)

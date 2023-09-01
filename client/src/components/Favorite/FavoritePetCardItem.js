@@ -43,4 +43,8 @@ const FavoritePetCardItem = ({ image, name, id, adoption_link }) => {
   );
 };
 
+<<<<<<< HEAD
 export default FavoritePetCardItem;
+=======
+export default FavoritePetCardItem;
+>>>>>>> 85d5c5e (added all MVP code)

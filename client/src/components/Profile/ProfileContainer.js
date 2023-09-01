@@ -34,4 +34,8 @@ const ProfileContainer = () => {
   );
 };
 
+<<<<<<< HEAD
 export default ProfileContainer;
+=======
+export default ProfileContainer;
+>>>>>>> 85d5c5e (added all MVP code)

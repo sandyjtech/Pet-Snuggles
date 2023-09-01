@@ -58,7 +58,10 @@ const PetCardItem = ({ name, image, id }) => {
 //need to add route to button
 
 export default PetCardItem
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 85d5c5e (added all MVP code)
 
 
