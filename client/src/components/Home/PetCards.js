@@ -22,4 +22,3 @@ const PetCards = () => {
 }
 
 export default PetCards;
-
