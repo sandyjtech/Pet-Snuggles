@@ -19,9 +19,9 @@ class User(db.Model, SerializerMixin):
     space = db.Column(db.String)
     
     favorites = db.relationship("Favorite", backref="user")
-    schedules = association_proxy("favorites", "schedule")
+    pets = association_proxy("favorites", "pet")
     
-    serialize_rules = ("-favorites.user", "-schedules.user",)
+    serialize_rules = ("-favorites.user", )
     
     @validates("space")
     def validate_space(self, key, value):
@@ -55,12 +55,12 @@ class User(db.Model, SerializerMixin):
 
     @password.setter
     def password(self, plaintext_password):
-        # Hash the password using bcrypt
+      
         hashed_password = bcrypt.generate_password_hash(plaintext_password.encode("utf-8"))
         self._password = hashed_password.decode('utf-8')
 
     def check_password(self, plaintext_password):
-        # Check if the provided password matches the hashed one
+ 
         return bcrypt.check_password_hash(self._password, plaintext_password.encode('utf-8'))
 
             
@@ -84,8 +84,9 @@ class Pet(db.Model, SerializerMixin):
     adoption_link = db.Column(db.String , nullable=False)
     
     schedules = db.relationship("Schedule", backref="pet")
+    favorites = db.relationship("Favorite", back_populates="pet")
     
-    serialize_rules = ("-schedules.pet",)
+    serialize_rules = ("-schedules", "-favorites",)
       
     
     @validates("sex")
@@ -109,6 +110,7 @@ class Favorite(db.Model, SerializerMixin):
     pet_id = db.Column(db.Integer, db.ForeignKey('pets.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     
+    pet = db.relationship("Pet", back_populates="favorites")
     serialize_rules = ('-favorites', '-schedules',)
     
     def __repr__(self):
@@ -127,4 +129,6 @@ class Schedule(db.Model, SerializerMixin):
     def __repr__(self):
         return f'Schedule (user_id={self.user_id}, pet_id={self.pet_id}, Time and Date={self.date_time})'
     
+    
+
     

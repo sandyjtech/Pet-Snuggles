@@ -30,17 +30,8 @@ const ProfileContainer = () => {
           space={user.space}
         />
       )}
-      <Header />
-      {user && (
-        <AccountDetails
-          username={user.username}
-          address={user.address}
-          small_kids={user.small_kids}
-          own_pets={user.own_pets}
-          space={user.space}
-        />
-      )}
     </div>
   );
 };
+
 export default ProfileContainer;

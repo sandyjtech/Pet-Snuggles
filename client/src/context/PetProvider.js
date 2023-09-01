@@ -4,10 +4,10 @@ const PetContext = React.createContext();
 
 function PetProvider ({ children })  {
   const [pets, setPets] = useState([]);
-  // Other state for user interactions, favorites, etc.
+  
 
   useEffect(() => {
-    fetch("/pets") // Use the correct API endpoint here
+    fetch("/pets") 
       .then((r) => {
         if (r.ok) {
           return r.json();

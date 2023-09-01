@@ -25,7 +25,7 @@ function Login({onLogin}) {
         })}
         onSubmit={(values, actions) => {
           handleAuthSubmit(values, actions, 'login');
-          history.push("/profile/:id");
+          history.push("/profile");
           onLogin();
         }}
       >

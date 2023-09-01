@@ -1,25 +1,23 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom'; 
+import {useFavorites} from '../../context/FavoritesProvider'
 
-const FavoritePetCardItem = ({ image, name,  }) => {
-  
-  const EmptyHeart= () => {
-    const [isFilled, setIsFilled] = useState(false);
-  
-    const handleClick = () => {
-      console.log('handleClick')
-      setIsFilled(!isFilled);
-      
-    };
-  
-    return (
-        <a href onClick={handleClick}>
-          {isFilled ? <FavoriteIcon style={{ color: 'red' }}/> : <FavoriteBorderOutlinedIcon style={{ color: 'red' }}/>}
-        </a>
-    );
-  }
+const FavoritePetCardItem = ({ image, name, id, adoption_link }) => {
+  const { handleRemoveFavorite } = useFavorites(); 
+
+  const [isFilled, setIsFilled] = useState(true); 
+
+  const handleDeleteClick = () => {
+    //console.log('Before deletion - isFilled:', isFilled, 'id:', id);
+    if (isFilled) {
+      handleRemoveFavorite(id); 
+    }
+    setIsFilled(!isFilled);
+    //console.log('After deletion - isFilled:', isFilled, 'id:', id);
+  };
 
   return (
     <div>
@@ -27,14 +25,22 @@ const FavoritePetCardItem = ({ image, name,  }) => {
         src={image}
         alt={name}
         height={260}
-        width={260} 
-        overflow hidden
-            />
+        width={260}
+        overflow="hidden"
+      />
       <h2>{name}</h2>
-      <EmptyHeart align='right'/>
-      <Button>Book</Button>
+      <Link to={adoption_link} target="_blank" rel="noopener noreferrer">
+        <Button>Adopt</Button>
+      </Link>
+      <Link to="#" onClick={(e) => { e.preventDefault(); handleDeleteClick(); }}>
+        {isFilled ? (
+          <FavoriteIcon style={{ color: 'red' }} />
+        ) : (
+          <FavoriteBorderOutlinedIcon style={{ color: 'red' }} />
+        )}
+      </Link>
     </div>
-  )
-}
+  );
+};
 
-export default FavoritePetCardItem
+export default FavoritePetCardItem;
