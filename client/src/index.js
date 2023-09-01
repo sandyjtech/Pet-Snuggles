@@ -5,18 +5,22 @@ import "./index.css";
 import App from "./components/App";
 import { PetProvider } from "./context/PetProvider";
 import UserAuthProvider  from "./context/UserAuthProvider"; // Make sure to use the correct import path
-
+import FavoritesProvider from "./context/FavoritesProvider";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <UserAuthProvider>
+      <UserAuthProvider>       
         <PetProvider>
+        <FavoritesProvider>
           <App />
-        </PetProvider>
+          </FavoritesProvider>
+        </PetProvider>        
       </UserAuthProvider>
     </BrowserRouter>
   </React.StrictMode>
 
+
 );
+
 

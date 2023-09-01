@@ -2,6 +2,7 @@
 # app.py
 # Remote library imports
 from flask import abort, request, session
+from flask import abort, request, session
 from sqlite3 import IntegrityError
 from flask import Flask, make_response, jsonify, request, session
 from sqlalchemy.exc import IntegrityError
@@ -19,10 +20,20 @@ from models import User, Pet, Favorite, Schedule
 #         return {'error': 'Not logged in'}, 401
         
 # Home Component is available to unauthorized
+      
+##############Authenticated User (Protected Routes) #################
+# @app.before_request
+# def check_if_user_logged_in():
+#     open_access_list = ['pets', 'signup', 'login', 'logout']
+#     if request.endpoint not in open_access_list and not session.get("user_id"):
+#         return {'error': 'Not logged in'}, 401
+        
+# Home Component is available to unauthorized
 class Pets(Resource):
     def get(self):
         pets = [pet.to_dict() for pet in Pet.query.all()]
         return make_response(pets, 200)
+
 class PetsById(Resource):
     def get(self, id):
         pet = Pet.query.filter_by(id=id).first()
@@ -132,7 +143,25 @@ class ScheduleById(Resource):
 class Signup(Resource):
     def post(self):
         req_json = request.get_json()
+        req_json = request.get_json()
         try:
+            new_user = User(
+                username=req_json["username"],
+                password=req_json["password"],
+                address=req_json["address"],                
+                small_kids=req_json["small_kids"],
+                own_pets=req_json["own_pets"],
+                space=req_json["space"],
+            )
+        except:
+            abort(422, "Invalid user data")
+        db.session.add(new_user)
+        db.session.commit()
+        session["user_id"] = new_user.id
+        return make_response(new_user.to_dict(), 201)
+    
+
+    
             new_user = User(
                 username=req_json["username"],
                 password=req_json["password"],
@@ -152,7 +181,16 @@ class Signup(Resource):
     
 class Login(Resource):
 
+
     def post(self):
+        username = request.get_json()['username']
+        user = User.query.filter(User.username == username)
+        password = request.get_json()['password']
+        if user.authenticate(password):
+            session['user_id'] = user.id
+            return user.to_dict(), 200
+        return {'error': 'Invalid username or password'}, 401
+
         username = request.get_json()['username']
         user = User.query.filter(User.username == username)
         password = request.get_json()['password']
@@ -172,16 +210,22 @@ api.add_resource(Signup, "/signup")
 api.add_resource(Login, "/login")
 api.add_resource(Logout, '/logout')
 
+    def delete(self): # just add this line!
+        session['user_id'] = None
+        return {'message': '204: No Content'}, 204
+
+api.add_resource(Signup, "/signup")
+api.add_resource(Login, "/login")
+api.add_resource(Logout, '/logout')
+
 # Add the resources to the API
 api.add_resource(Favorites, '/favorites')
 api.add_resource(FavoritesById, '/favorites/<int:id>')
 api.add_resource(Pets, '/pets', endpoint='pets')
-api.add_resource(PetsById, '/pets/<int:id>', endpoint='/pets/<int:id>')
+api.add_resource(PetsById, '/pets/<int:id>')
 api.add_resource(UserDetailsById, '/users/<int:id>')
 api.add_resource(Schedules, '/schedules', endpoint='schedules')
 api.add_resource(ScheduleById, '/schedules/<int:id>', endpoint="schedule")
 # Run the app if executed directly
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
-
-

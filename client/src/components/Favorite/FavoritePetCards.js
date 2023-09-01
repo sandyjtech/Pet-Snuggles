@@ -1,19 +1,26 @@
-import React from 'react'
-import FavoritePetCardItem from './FavoritePetCardItem'
+import React from 'react';
+import FavoritePetCardItem from './FavoritePetCardItem';
+import Grid from '@mui/material/Grid';
+import { useFavorites } from '../../context/FavoritesProvider';
+//import { useParams } from 'react-router-dom';
 
 const FavoritePetCards = ({ pets }) => {
+  const {favorite} = useFavorites();
+
+
+  const FavoritePetCards = favorite.map((pet) => (
+    <Grid item xs={12} sm={6} md={4} key={pet.id}>
+      <FavoritePetCardItem key={pet.id} {...pet}  />
+    </Grid>
+  ));
   
-  const FavoritePetCards = pets.map((pet) => {
-    return <FavoritePetCardItem key={pet.id} {...pet}/>
-  })
-    
   return (
-      <div>
-        {FavoritePetCards}
-      </div>
+    <Grid container spacing={2}>
+      {FavoritePetCards}
+    </Grid>
   )
 }
 
 export default FavoritePetCards
 
-//need to figure out how to fetch just the hearted pets, favorited pets for this user
+//need to figure out how to fetch just the hearted pets, favorite pets for this user

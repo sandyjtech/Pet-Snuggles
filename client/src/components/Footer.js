@@ -13,53 +13,60 @@ import { NavLink } from 'react-router-dom'
 const StickyFooter = styled('div')({
   position: 'sticky',
   bottom: 0,
-  backgroundColor: 'white', 
+  backgroundColor: 'white',
   zIndex: 1000,
 });
 
-function Footer() {
+const FooterContent = styled('div')({
+  width: '100%', 
+  display: 'flex',
+  justifyContent: 'center',
+});
 
+function Footer() {
   return (
     <StickyFooter>
-      <Grid container>
-        <Stack direction="row" spacing={5}>
-          <Divider orientation="vertical" flexItem />
-          <Grid item xs>
-            <NavLink to="/">
-              <Button>
-                <SearchIcon style={{ color: 'black' }}/>
-              </Button>
-            </NavLink>
-          </Grid>
-          <Divider orientation="vertical" flexItem />
-          <Grid item xs>
-            <NavLink to="/favorites">
-              <Button>
-                <FavoriteIcon style={{ color: 'red' }}/> 
-              </Button>
-            </NavLink>
-          </Grid>
-          <Divider orientation="vertical" flexItem />
-          <Grid item xs>
-          <NavLink to="/schedule">
-            <Button>
-              <CalendarTodayOutlinedIcon style={{ color: 'blue' }}/>
-            </Button>
-          </NavLink>
-          </Grid>
-          <Divider orientation="vertical" flexItem />
-          <Grid item xs>
-            <NavLink to="/profile">
-              <Button>
-                <PersonOutlinedIcon style={{ color: 'black' }}/>
-              </Button>
-            </NavLink>
-          </Grid>
-          <Divider orientation="vertical" flexItem />
-      </Stack>
-    </Grid>
-  </StickyFooter>
+      <FooterContent>
+        <Grid container>
+          <Stack direction="row" spacing={5}>
+            <Divider orientation="vertical" flexItem />
+            <Grid item xs>
+              <NavLink to="/">
+                <Button>
+                  <SearchIcon style={{ color: 'black' }} />
+                </Button>
+              </NavLink>
+            </Grid>
+            <Divider orientation="vertical" flexItem />
+            <Grid item xs>
+              <NavLink to="/favorites">
+                <Button>
+                  <FavoriteIcon style={{ color: 'red' }} />
+                </Button>
+              </NavLink>
+            </Grid>
+            <Divider orientation="vertical" flexItem />
+            <Grid item xs>
+              <NavLink to="/schedule">
+                <Button>
+                  <CalendarTodayOutlinedIcon style={{ color: 'blue' }} />
+                </Button>
+              </NavLink>
+            </Grid>
+            <Divider orientation="vertical" flexItem />
+            <Grid item xs>
+              <NavLink to="/profile">
+                <Button>
+                  <PersonOutlinedIcon style={{ color: 'black' }} />
+                </Button>
+              </NavLink>
+            </Grid>
+            <Divider orientation="vertical" flexItem />
+          </Stack>
+        </Grid>
+      </FooterContent>
+    </StickyFooter>
   );
 }
 
-export default Footer
+export default Footer;

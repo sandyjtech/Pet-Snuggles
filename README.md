@@ -1,5 +1,14 @@
 # Pet Snuggles
-NEED TO UPDATE: To run, clone down, run npm install, json-server --watch db.json, then npm start.
+To run, clone down, 
+cd into client, 
+run npm install, 
+and npm start. 
+
+In a new terminal 
+cd into server,
+run export FLASK_APP=app.py,
+export FLASK_RUN_PORT=5555,
+and then flask run.
 
 ## Introduction
 
@@ -8,8 +17,6 @@ Pet Snuggles is a demo application for a service where people can schedule times
 ### As a user I can:
 
 * Login to account.
-
-* Search for dogs or cats.
 
 * See more details of a selected pet.
 
@@ -28,6 +35,7 @@ Pet Snuggles is a demo application for a service where people can schedule times
 
 Ideas for future releases:
 
+- Search function working.
 - Having the database linked to petfinder.com so it updates across the two platforms. 
 - With the linked database we'd add a search for pets in your area. 
 
