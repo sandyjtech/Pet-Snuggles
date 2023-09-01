@@ -12,7 +12,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import { useUserAuth  } from "../context/UserAuthProvider";
 import Login from './Login';
-import Signup from './Signup';
+import Signup from './Signup'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -25,6 +25,7 @@ const Search = styled('div')(({ theme }) => ({
   marginRight: 'auto',
   width: '60%',
 }));
+
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
   padding: theme.spacing(0, 2),
@@ -67,15 +68,7 @@ function Header() {
   const [isLoginModalOpen, setLoginModalOpen] = useState(false);
   const [isSignupModalOpen, setSignupModalOpen] = useState(false);
   const { user, handleLogout } = useUserAuth() ;
-  // const filteredPets = pets.filter(pet =>
-  //   pet.name.toLowerCase().includes(searchTerm.toLowerCase())
-  // );
 
-  // const petCards = filteredPets.map(pet => (
-  //   <Grid item xs={12} sm={6} md={4} key={pet.id}>
-  //     <PetCardItem key={pet.id} {...pet} />
-  //   </Grid>
-  // ));
 
   const handleLoginModalOpen = () => {
     setLoginModalOpen(true);
@@ -97,8 +90,8 @@ function Header() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <img src={process.env.PUBLIC_URL + "Dogoutline.png"} alt="PetSnuggles logo" width="150px" />
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <img src={process.env.PUBLIC_URL + "Dogoutline.png"} alt="PetSnuggles logo" width="150px" />
           </div>
           <div style={{ marginLeft: '15px' }}>
           <h1>Pet Snuggles</h1>
@@ -157,3 +150,4 @@ function Header() {
 }
 
 export default Header;
+
