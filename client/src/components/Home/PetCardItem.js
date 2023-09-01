@@ -8,25 +8,31 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import Button from '@mui/material/Button';
 import { NavLink } from 'react-router-dom';
 import { useFavorites } from '../../context/FavoritesProvider';
+import { useUserAuth } from '../../context/UserAuthProvider';
 
-const EmptyHeart = () => {
+const EmptyHeart = ({ petId, userId }) => {
   const [isFilled, setIsFilled] = useState(false);
-  const {favorite, setFavorite} = useFavorites();
+  const { favoritePets, setFavorite, handleAddFavorite } = useFavorites(); // Use setFavorite from context
 
+  
   const handleClick = () => {
-    console.log('handleClick')
+    handleAddFavorite(userId, petId)
+    setFavorite(favoritePets); // Update favoritePets in the context
     setIsFilled(!isFilled);
-    setFavorite(favorite)
+   
   };
 
   return (
-    <button onClick={handleClick} style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
-      {isFilled ? <FavoriteIcon style={{ color: 'red' }} /> : <FavoriteBorderOutlinedIcon style={{ color: 'red' }} />}
-    </button>
+      <a href onClick={handleClick}>
+        {isFilled ? <FavoriteIcon style={{ color: 'red' }}/> : <FavoriteBorderOutlinedIcon style={{ color: 'red' }}/>}
+      </a>
   );
-};
+}
+//turn into a button, add to user id, sent to database favorites, userid, petid
 
-const PetCardItem = ({ name, image, id}) => {
+const PetCardItem = ({ name, image, id }) => {
+  const { user } = useUserAuth();  
+
   return (
     <div>
       <Card sx={{ maxWidth: 345 }}>
@@ -39,16 +45,20 @@ const PetCardItem = ({ name, image, id}) => {
       <CardContent>
         <h2>{name}</h2>
       </CardContent>
-      <CardActions>
-        <EmptyHeart align='right'/>
-        <NavLink to={`/pets/${id}`} style={{ marginLeft: 'auto' }}><Button variant="outlined">Book</Button></NavLink>
-      </CardActions>
+      {user && (
+          <CardActions>
+            <EmptyHeart petId={id} userId={user.id} />
+             <NavLink to={`/pets/${id}`} style={{ marginLeft: 'auto' }}><Button variant="outlined">Book</Button></NavLink>
+          </CardActions>
+        )}
       </Card>
     </div>
-  );
-};
+  )
+}
+//need to add route to button
+
+export default PetCardItem
 
 
-export default PetCardItem;
 
 
