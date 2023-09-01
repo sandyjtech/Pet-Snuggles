@@ -24,7 +24,7 @@ const UserAuthProvider = ({ children }) => {
         },
         body: JSON.stringify(values),
       });
-      console.log(endpoint)
+      //console.log(endpoint)
       if (response.ok) {
         const userData = await response.json();
         setUser(userData);
